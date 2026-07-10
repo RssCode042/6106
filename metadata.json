@@ -1,5 +1,0 @@
-{
-  "name": "Taxi Admin Dashboard",
-  "description": "Comprehensive admin panel for managing taxi orders, drivers, and real-time tracking.",
-  "requestFramePermissions": ["geolocation"]
-}
