@@ -71,7 +71,7 @@ export default  function Cta() {
             <div className="cta-card bg-white flex flex-col gap-4 px-4 py-4 items-start">
               <div className="cta-title flex flex-row gap-4 items-start">
                 <div className="service-icon bg-yellow rounded-md">
-                  <SmartphoneCharging className="text-brand m-4  bg-yellow rounded-md" size={24}/>
+                  <Headset className="text-brand m-4  bg-yellow rounded-md" size={24}/>
                 </div>
                 <h3 className="text-2xl pt-2">Свали приложението</h3>
               </div>
