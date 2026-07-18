@@ -31,7 +31,7 @@ function Home() {
 
 export default function App() {
   return (
-    <BrowserRouter basename="/6106">
+    <BrowserRouter>
         <div className="min-h-screen bg-bg">
            <Header />
              <Routes>
