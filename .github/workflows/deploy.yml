@@ -31,7 +31,7 @@ jobs:
 
       # 4. Компилиране на Vite проекта (Създава папка dist)
       - name: Build application
-        run: npm run build
+        run: npm run build 
 
       # 5. Качване специално в GitHub Pages клона
       - name: Deploy to GitHub Pages
