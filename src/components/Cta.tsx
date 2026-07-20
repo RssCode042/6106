@@ -73,7 +73,7 @@ export default  function Cta() {
                 <div className="service-icon bg-yellow rounded-md">
                   <Headset className="text-brand m-4  bg-yellow rounded-md" size={24}/>
                 </div>
-                <h3 className="text-2xl pt-2">Свали приложението</h3>
+                <h3 className="text-2xl pt-2">Свържи се с диспечер</h3>
               </div>
               <div className="title flex flex-col items-left justify-left gap-4">
                 
