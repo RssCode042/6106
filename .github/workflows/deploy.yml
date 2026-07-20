@@ -1,41 +1,52 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy React App to GitHub Pages
+name: Deploy
 
 on:
   push:
     branches:
-      - main # Стартира при пускане в главния клон
-
-permissions:
-  contents: write # Дава права на автоматизацията да създаде gh-pages клона
+      - main
 
 jobs:
-  build-and-deploy:
+  build:
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Сваляне на кода
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v6
 
-      # 2. Настройка на Node.js
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Node
+        uses: actions/setup-node@v6
         with:
           node-version: 24
-          cache: 'npm'
+          cache: npm
 
-      # 3. Инсталиране на зависимостите
       - name: Install dependencies
         run: npm ci
 
-      # 4. Компилиране на Vite проекта (Създава папка dist)
-      - name: Build application
-        run: npm run build 
+      - name: Build project
+        run: npm run build
 
-      # 5. Качване специално в GitHub Pages клона
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v7
         with:
-          folder: dist # Папката, която Vite създава
-          branch: main # Клонът, от който GitHub Pages ще чете
+          name: production-files
+          path: ./dist
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v8
+        with:
+          name: production-files
+          path: ./dist
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
