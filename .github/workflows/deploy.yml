@@ -38,4 +38,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist # Папката, която Vite създава
-          branch: gh-pages # Клонът, от който GitHub Pages ще чете
+          branch: main # Клонът, от който GitHub Pages ще чете
