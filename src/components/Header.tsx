@@ -21,10 +21,10 @@ export default function Header() {
         <NavLink to="/about" className={navLinkClass} >За Нас</NavLink>
         <NavLink to="/contact" className={navLinkClass} >Контакт</NavLink>
       </nav>
-      <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="hidden md:flex bg-blue-900 text-white px-5 py-3 rounded-xl hover:bg-blue-800">Поръчай сега</a>
+      <a href="https://example.com" target="_blank" rel="noopener noreferrer" aria-label='Order' className="hidden md:flex bg-blue-900 text-white px-5 py-3 rounded-xl hover:bg-blue-800">Поръчай сега</a>
 
       {/* Mobile Hamburger */}
-      <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+      <button className="md:hidden" aria-label='Mobile Menu' onClick={() => setIsOpen(!isOpen)}>
         {isOpen ? <X /> : <Menu />}
       </button>
 
@@ -36,7 +36,7 @@ export default function Header() {
           <NavLink to="/services" onClick={() => setIsOpen(false)} className={navLinkClass}>Услуги</NavLink>
           <NavLink to="/about" onClick={() => setIsOpen(false)} className={navLinkClass} >За Нас</NavLink>
           <NavLink to="/contact" onClick={() => setIsOpen(false)} className={navLinkClass} >Контакт</NavLink>
-          <a href="https://example.com" target="_blank" rel="noopener noreferrer" className="bg-blue-900 text-white px-5 py-3 rounded-xl hover:bg-blue-800">Поръчай сега</a>
+          <a href="https://example.com" target="_blank" rel="noopener noreferrer" aria-label='Order' className="bg-blue-900 text-white px-5 py-3 rounded-xl hover:bg-blue-800">Поръчай сега</a>
         </nav>
       )}
       </div>

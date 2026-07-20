@@ -42,10 +42,10 @@ export default function Pricing() {
                     <div className="bg-white border border-gray-200 p-6 rounded-2xl shadow-sm flex-grow">
                         <h3 className="text-xl md:text-2xl font-bold mb-6 text-gray-900">Калкулатор на цена</h3>
                         <label className="block mb-2 font-medium">Разстояние: {distance} км</label>
-                        <input type="range" min="1" max="100" value={distance} onChange={e => setDistance(Number(e.target.value))} className="w-full mb-6 bg-brand" />
+                        <input type="range" min="1" max="100" aria-label='Дистанция' value={distance} onChange={e => setDistance(Number(e.target.value))} className="w-full mb-6 bg-brand" />
                         
                         <label className="block mb-2 font-medium">Престой: {wait} мин.</label>
-                        <input type="range" min="0" max="60" value={wait} onChange={e => setWait(Number(e.target.value))} className="w-full mb-6 bg-brand" />
+                        <input type="range" min="0" max="60" value={wait} aria-label='Престой' onChange={e => setWait(Number(e.target.value))} className="w-full mb-6 bg-brand" />
                         
                         <div className="flex bg-gray-200 rounded-lg p-1 mb-6">
                             <button onClick={() => setTariff('daily')} className={`flex-1 py-2 rounded-md font-semibold ${tariff === 'daily' ? 'bg-white shadow' : ''}`}>Дневна</button>
