@@ -1,6 +1,6 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import {Helmet} from 'react-helmet-async';
-import { Suspense, lazy } from 'react';
+import { Suspense } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
