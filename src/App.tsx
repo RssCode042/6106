@@ -11,6 +11,7 @@ import Prices from './components/Prices';
 import Benefits from './components/Benefits';
 import Cta from './components/Cta';
 import Footer from './components/Footer';
+import CookieConsent from './components/CookieConsent';
 
 function Home() {
     return (
@@ -43,6 +44,7 @@ export default function App() {
 
             </Routes>
             <Footer />
+            <CookieConsent />
         </div>
     </BrowserRouter>
   );
