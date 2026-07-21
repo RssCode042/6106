@@ -24,7 +24,7 @@ export default  function Benefits() {
   ];
 
   return (
-    <section className="section flex items-center justify-center px-6 py-5 " id="services">
+    <section className="section flex items-center justify-center px-6 py-5 " id="benefits">
       <div className="container flex flex-col gap-8 my-8 items-left justify-left">
         <div className="section-header ">
           <span className="bg-accent text-white px-3 py-1 rounded-full text-xs  font-bold uppercase">Защо нас</span>

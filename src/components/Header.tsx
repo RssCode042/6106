@@ -1,46 +1,126 @@
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import logo from '../assets/logo.svg';
 
+const APP_STORE_URL = 'https://example.com';   // TODO: replace with real URL
+
+const navItems = [
+  { label: 'Начало', to: '/' },
+  { label: 'Приложение', to: '/application' },
+  { label: 'Услуги', to: '/#services' },
+  { label: 'За Нас', to: '/#about' },
+  { label: 'Контакт', to: '/#contact' },
+];
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  
-  const navLinkClass = ({ isActive }: { isActive: boolean }) =>
-    `hover:text-blue-900 pb-2 border-b-4 ${isActive ? 'border-blue-900' : 'border-transparent'}`;
-  
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const close = () => setIsOpen(false);
+
+  /**
+   * For anchor links (/#section) we navigate to "/" first then scroll.
+   * For regular routes we use NavLink's built-in active detection.
+   */
+  const handleAnchorClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    to: string
+  ) => {
+    if (!to.includes('#')) return; // let NavLink handle normal routes
+    e.preventDefault();
+    close();
+    const [path, hash] = to.split('#');
+    const targetPath = path || '/';
+    if (location.pathname !== targetPath) {
+      navigate(targetPath);
+      // give the page time to render, then scroll
+      setTimeout(() => {
+        document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const linkClass = ({ isActive }: { isActive: boolean }) =>
+    `hover:text-blue-900 pb-2 border-b-4 transition-colors duration-200 ${
+      isActive ? 'border-blue-900 text-blue-900' : 'border-transparent'
+    }`;
+
   return (
     <header className="flex items-center justify-center px-6 py-5 bg-white shadow-sm sticky top-0 z-50">
-      <div className="container flex items-center justify-between z-50">
-      <NavLink to="/" className="flex items-center"><img src={logo} alt="N6106 Logo" className="h-10 w-auto inline" /></NavLink>
-      <nav className="hidden md:flex gap-6 text-gray-700">
-        <NavLink to="/" className={navLinkClass} >Начало</NavLink>
-        <NavLink to="/application" className={navLinkClass}>Приложение</NavLink>
-        <NavLink to="/services" className={navLinkClass} >Услуги</NavLink>
-        <NavLink to="/about" className={navLinkClass} >За Нас</NavLink>
-        <NavLink to="/contact" className={navLinkClass} >Контакт</NavLink>
-      </nav>
-      <a href="https://example.com" target="_blank" rel="noopener noreferrer" aria-label='Order' className="hidden md:flex bg-blue-900 text-white px-5 py-3 rounded-xl hover:bg-blue-800">Поръчай сега</a>
+      <div className="container flex items-center justify-between">
+        <NavLink to="/" className="flex items-center">
+          <img src={logo} alt="Ен Такси Стара Загора" className="h-10 w-auto" />
+        </NavLink>
 
-      {/* Mobile Hamburger */}
-      <button className="md:hidden" aria-label='Mobile Menu' onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? <X /> : <Menu />}
-      </button>
+        {/* Desktop nav */}
+        <nav className="hidden md:flex gap-6 text-gray-700">
+          {navItems.map(({ label, to }) => (
+            <NavLink
+              key={to}
+              to={to}
+              end={to === '/'}
+              className={linkClass}
+              onClick={(e) => handleAnchorClick(e, to)}
+            >
+              {label}
+            </NavLink>
+          ))}
+        </nav>
 
-      {/* Mobile Menu */}
+        <a
+          href={APP_STORE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Поръчай такси"
+          className="hidden md:flex bg-blue-900 text-white px-5 py-3 rounded-xl hover:bg-blue-800 transition-colors duration-200"
+        >
+          Поръчай сега
+        </a>
+
+        {/* Mobile hamburger */}
+        <button
+          className="md:hidden"
+          aria-label="Мобилно меню"
+          aria-expanded={isOpen}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X /> : <Menu />}
+        </button>
+      </div>
+
+      {/* Mobile menu */}
       {isOpen && (
-        <nav className="absolute top-full left-0 w-full bg-white shadow-lg p-4 flex flex-col gap-4 md:hidden">
-          <NavLink to="/" onClick={() => setIsOpen(false)} className={navLinkClass}>Начало</NavLink>
-          <NavLink to="/application" onClick={() => setIsOpen(false)} className={navLinkClass}>Приложение</NavLink>
-          <NavLink to="/services" onClick={() => setIsOpen(false)} className={navLinkClass}>Услуги</NavLink>
-          <NavLink to="/about" onClick={() => setIsOpen(false)} className={navLinkClass} >За Нас</NavLink>
-          <NavLink to="/contact" onClick={() => setIsOpen(false)} className={navLinkClass} >Контакт</NavLink>
-          <a href="https://example.com" target="_blank" rel="noopener noreferrer" aria-label='Order' className="bg-blue-900 text-white px-5 py-3 rounded-xl hover:bg-blue-800">Поръчай сега</a>
+        <nav className="absolute top-full left-0 w-full bg-white shadow-lg p-4 flex flex-col gap-4 md:hidden z-40">
+          {navItems.map(({ label, to }) => (
+            <NavLink
+              key={to}
+              to={to}
+              end={to === '/'}
+              className={linkClass}
+              onClick={(e) => {
+                handleAnchorClick(e, to);
+                if (!to.includes('#')) close();
+              }}
+            >
+              {label}
+            </NavLink>
+          ))}
+          <a
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Поръчай такси"
+            className="bg-blue-900 text-white px-5 py-3 rounded-xl hover:bg-blue-800 transition-colors duration-200 text-center"
+            onClick={close}
+          >
+            Поръчай сега
+          </a>
         </nav>
       )}
-      </div>
     </header>
   );
 }
-

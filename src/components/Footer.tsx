@@ -11,23 +11,23 @@ import { MapPin, Phone, Mail } from 'lucide-react';
 
 export default function Footer() {
     return (
-        <footer className="bg-white pt-16 pt-8 border-t border-gray-100">
+        <footer className="bg-white pt-8 border-t border-gray-100">
             <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
                 <div className="col-span-1 md:col-span-1">
                     <NavLink to="/" className="flex items-center"><img src={logo} alt="N6106 Logo" className="h-10 w-auto inline" /></NavLink>
                     <p className="text-gray-600 mb-6">Повече от 30 години доверие, сигурност и комфорт по пътищата на Стара Загора. Твоят лицензиран таксиметров партньор.</p>
                     <div className="flex gap-4">
                         <Link to="/" className="flex items-center">
-                            <img src={Facebook} alt="N6106 Logo" className="h-8 w-auto inline text-brand" />
+                            <img src={Facebook} alt="Facebook" className="h-8 w-auto inline text-brand" />
                         </Link>
                                 <Link to="/" className="flex items-center">
-                                    <img src={TikTok} alt="N6106 Logo" className="h-8 w-auto inline" />
+                                    <img src={TikTok} alt="TikTok" className="h-8 w-auto inline" />
                                 </Link>
                                 <Link to="/" className="flex items-center">
-                                    <img src={YouTube} alt="N6106 Logo" className="h-8 w-auto inline" />
+                                    <img src={YouTube} alt="YouTube" className="h-8 w-auto inline" />
                                 </Link>
                                 <Link to="/" className="flex items-center">
-                                    <img src={Instagram} alt="N6106 Logo" className="h-8 w-auto inline" />
+                                    <img src={Instagram} alt="Instagram" className="h-8 w-auto inline" />
                                 </Link>
                     </div>
                 </div>

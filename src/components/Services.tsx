@@ -39,9 +39,9 @@ export default  function Services() {
               <div className="title flex flex-col items-left justify-left gap-4">
                 <h3 className="text-2xl pt-2">{title}</h3>
                 <p>{desc}</p>
-                <a href="#" className="block text-heading text-right hover:text-brand flex items-center gap-2 mt-2">
+                <a href="#" className="group block text-heading text-right hover:text-brand flex items-center gap-2 mt-2">
                   Прочети повече
-                  <ChevronRight className="hover:-translate-x-1 duration-300" size={20} />
+                  <ChevronRight className="group-hover:translate-x-1 duration-300" size={20} />
                 </a>
               </div>
               
