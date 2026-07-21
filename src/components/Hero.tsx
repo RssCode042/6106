@@ -49,9 +49,15 @@ export default function Hero() {
         </a>
         </div>
       </div>
-      <div className="relative mt-8 md:mt-0">
-          <img src={HeroImage} alt="Taxi" className="w-full md:w-[650px]" />
-      </div>
+          <img
+              src={HeroImage}
+              alt="Ен Такси мобилно приложение"
+              width={650}
+              height={500}
+              fetchPriority="high"
+              decoding="async"
+              className="w-full md:w-[650px] h-auto"
+          />
       </div>
     </section>
   );

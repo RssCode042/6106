@@ -37,7 +37,15 @@ export default function AboutUs() {
         </div>
       </div>
       <div className="relative mt-8 md:mt-0 md:items-right">
-          <img src={AboutImage} alt="Taxi" className="w-full " />
+          <img
+              src={AboutImage}
+              alt="Ен Такси автопарк - повече от 350 автомобила"
+              width={600}
+              height={500}
+              loading="lazy"
+              decoding="async"
+              className="w-full h-auto"
+          />
       </div>
       </div>
     </section>
