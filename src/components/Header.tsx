@@ -3,14 +3,14 @@ import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import logo from '../assets/logo.svg';
 
-const APP_STORE_URL = 'https://example.com';   // TODO: replace with real URL
+const APP_STORE_URL = 'tel:+359888666106';   // TODO: replace with real URL
 
 const navItems = [
   { label: 'Начало', to: '/' },
   { label: 'Приложение', to: '/application' },
-  { label: 'Услуги', to: '/#services' },
-  { label: 'За Нас', to: '/#about' },
-  { label: 'Контакт', to: '/#contact' },
+  { label: 'Услуги', to: '/services' },
+  { label: 'За Нас', to: '/about' },
+  { label: 'Контакт', to: '/contact' },
 ];
 
 export default function Header() {
@@ -44,10 +44,20 @@ export default function Header() {
     }
   };
 
-  const linkClass = ({ isActive }: { isActive: boolean }) =>
-    `hover:text-blue-900 pb-2 border-b-4 transition-colors duration-200 ${
-      isActive ? 'border-blue-900 text-blue-900' : 'border-transparent'
+  const navLink = ({ isActive }: { isActive: boolean }) =>
+    `relative px-4 py-2 text-sm font-semibold rounded-xl transition-all duration-200 ease-in-out ${
+      isActive
+        ? 'bg-blue-900 text-white shadow-md shadow-blue-900/20 scale-105'
+        : 'text-gray-700 hover:text-blue-900 hover:bg-blue-50/80 active:scale-95'
     }`;
+
+  const mobileNavLink = ({ isActive }: { isActive: boolean }) =>
+    `flex items-center w-full px-4 py-3 rounded-xl font-semibold text-base transition-all duration-200 ${
+      isActive
+        ? 'bg-blue-900 text-white shadow-md shadow-blue-900/20'
+        : 'text-gray-700 hover:bg-blue-50 hover:text-blue-900 active:bg-blue-100'
+    }`;
+
 
   return (
     <header className="flex w-full items-center justify-center px-6 py-5 bg-white/95 shadow-sm sticky top-0 z-50 transition-all duration-300 backdrop-blur-sm">
@@ -57,13 +67,13 @@ export default function Header() {
         </NavLink>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex gap-6 text-gray-700">
+        <nav className="hidden lg:flex gap-6 text-sm text-gray-700 lg:text-base">
           {navItems.map(({ label, to }) => (
             <NavLink
               key={to}
               to={to}
               end={to === '/'}
-              className={linkClass}
+              className={navLink}
               onClick={(e) => handleAnchorClick(e, to)}
             >
               {label}
@@ -76,14 +86,14 @@ export default function Header() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Поръчай такси"
-          className="hidden md:flex bg-blue-900 text-white px-5 py-3 rounded-xl hover:bg-blue-800 transition-colors duration-200"
+          className="hidden lg:flex bg-blue-900 text-white px-5 py-3 rounded-xl hover:bg-blue-800 transition-colors duration-200"
         >
           Поръчай сега
         </a>
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden"
+          className="lg:hidden"
           aria-label="Мобилно меню"
           aria-expanded={isOpen}
           onClick={() => setIsOpen(!isOpen)}
@@ -94,13 +104,13 @@ export default function Header() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <nav className="absolute top-full left-0 w-full bg-white shadow-lg p-4 flex flex-col gap-4 md:hidden z-40">
+        <nav className="absolute top-full left-0 w-full bg-white shadow-lg p-4 flex flex-col gap-4 lg:hidden z-40">
           {navItems.map(({ label, to }) => (
             <NavLink
               key={to}
               to={to}
               end={to === '/'}
-              className={linkClass}
+              className={mobileNavLink}
               onClick={(e) => {
                 handleAnchorClick(e, to);
                 if (!to.includes('#')) close();
