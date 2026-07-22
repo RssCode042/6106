@@ -50,10 +50,10 @@ export default function Header() {
     }`;
 
   return (
-    <header className="flex items-center justify-center px-6 py-5 bg-white shadow-sm sticky top-0 z-50">
+    <header className="flex w-full items-center justify-center px-6 py-5 bg-white/95 shadow-sm sticky top-0 z-50 transition-all duration-300 backdrop-blur-sm">
       <div className="container flex items-center justify-between">
         <NavLink to="/" className="flex items-center">
-          <img src={logo} alt="Ен Такси Стара Загора" className="h-10 w-auto" />
+          <img src={logo} alt="Ен Такси Стара Загора" className="h-8 w-auto lg:h-10" />
         </NavLink>
 
         {/* Desktop nav */}
