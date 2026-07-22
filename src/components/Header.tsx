@@ -3,7 +3,8 @@ import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import logo from '../assets/logo.svg';
 
-const APP_STORE_URL = 'https://example.com';   // TODO: replace with real URL
+import { useSettings } from '../context/SettingsContext';
+import { trackClick } from '../utils/api';
 
 const navItems = [
   { label: 'Начало', to: '/' },
@@ -17,6 +18,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const settings = useSettings();
 
   const close = () => setIsOpen(false);
 
@@ -72,10 +74,11 @@ export default function Header() {
         </nav>
 
         <a
-          href={APP_STORE_URL}
+          href={settings.app_store_url || '#'}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Поръчай такси"
+          onClick={() => trackClick('order_button')}
           className="hidden md:flex bg-blue-900 text-white px-5 py-3 rounded-xl hover:bg-blue-800 transition-colors duration-200"
         >
           Поръчай сега
@@ -110,12 +113,15 @@ export default function Header() {
             </NavLink>
           ))}
           <a
-            href={APP_STORE_URL}
+            href={settings.app_store_url || '#'}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Поръчай такси"
             className="bg-blue-900 text-white px-5 py-3 rounded-xl hover:bg-blue-800 transition-colors duration-200 text-center"
-            onClick={close}
+            onClick={() => {
+              trackClick('order_button');
+              close();
+            }}
           >
             Поръчай сега
           </a>

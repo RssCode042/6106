@@ -1,75 +1,21 @@
-# React + TypeScript + Vite
+4. Поддръжка на IIS сървър
+Създаден е 
+web.config
+ файл специално за използване с iisnode.
+Този файл автоматично инструктира IIS да пренасочва всички API заявки и непознати URL адреси към Node.js (server.js), докато директно сервира статичните файлове (CSS/JS) от папката dist за максимална производителност.
+Как да качиш приложението на IIS?
+За да подготвиш и качиш приложението за продукция (production), следвай тези стъпки:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Изпълни командата npm run build. Това ще компилира и оптимизира React файловете в папката dist/.
+Копирай следните файлове и папки към твоята директория на IIS сървъра (напр. C:\inetpub\wwwroot\6106):
+dist/ (цялата папка)
+node_modules/ (цялата папка с инсталираните пакети)
+package.json
+server.js
+database.js
+web.config
+Увери се, че имаш инсталиран Node.js и iisnode модула на самия Windows сървър.
+Увери се, че IIS сървърът има права за запис (Write permissions) в директорията на проекта, за да може database.js да създаде папката data/ и файла database.sqlite при първото стартиране.
+CAUTION
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+Ако използваш GitHub сървъра в продукция, не забравяй да промениш секретния ключ JWT_SECRET в server.js с нещо дълго и сигурно! Също така се увери, че папката data/ е скрита за публичен достъп отвън (което вече е направено във web.config).

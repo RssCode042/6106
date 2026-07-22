@@ -1,8 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import HeroImage from '../assets/HeroImage.png';
-
-const APP_STORE_URL = 'https://example.com';   // TODO: replace with real URL
-const GOOGLE_PLAY_URL = 'https://example.com'; // TODO: replace with real URL
+import { useSettings } from '../context/SettingsContext';
+import { trackClick } from '../utils/api';
 
 const features = [
   {
@@ -28,6 +27,7 @@ const features = [
 ];
 
 export default function ApplicationPage() {
+  const settings = useSettings();
   return (
     <div className="min-h-screen bg-bg">
       <Helmet>
@@ -56,7 +56,8 @@ export default function ApplicationPage() {
             <div className="flex flex-col md:flex-row gap-4 mt-8 justify-center md:justify-start">
               {/* App Store */}
               <a
-                href={APP_STORE_URL}
+                href={settings.app_store_url || '#'}
+                onClick={() => trackClick('app_store')}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Свали от App Store"
@@ -78,7 +79,8 @@ export default function ApplicationPage() {
 
               {/* Google Play */}
               <a
-                href={GOOGLE_PLAY_URL}
+                href={settings.google_play_url || '#'}
+                onClick={() => trackClick('google_play')}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Свали от Google Play"
@@ -157,7 +159,8 @@ export default function ApplicationPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={APP_STORE_URL}
+              href={settings.app_store_url || '#'}
+              onClick={() => trackClick('app_store')}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Свали от App Store"
@@ -166,7 +169,8 @@ export default function ApplicationPage() {
               App Store
             </a>
             <a
-              href={GOOGLE_PLAY_URL}
+              href={settings.google_play_url || '#'}
+              onClick={() => trackClick('google_play')}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Свали от Google Play"
