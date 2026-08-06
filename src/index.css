@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-accent: #00ADAD;
+  --color-brand: #2E3192;
+  --color-heading: oklch(0.2046 0 0);
+  --color-yellow: oklch(0.867152 0.177256 90.8474);
+}
+
+@layer components {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    }
+  }
+  p {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+  
+  }
+
