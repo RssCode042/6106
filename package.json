@@ -6,11 +6,11 @@
   "homepage": "https://6106.bg",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && node -e \"const fs=require('fs'); fs.copyFileSync('dist/index.html','dist/404.html'); fs.writeFileSync('dist/.nojekyll','');\"",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist --dotfiles"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
