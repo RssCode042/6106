@@ -7,6 +7,7 @@
   --color-brand: #2E3192;
   --color-heading: oklch(0.2046 0 0);
   --color-yellow: oklch(0.867152 0.177256 90.8474);
+  --container: 960px;
 }
 
 @layer components {

@@ -83,7 +83,7 @@ export default function ServicesPage() {
                 schema={servicesSchema}
             />
 
-            <section className=" mb-16 container mx-auto">
+            <section className=" mb-16 w-7xl mx-auto">
                 <div className="inline-flex bg-accent dark:bg-slate-800 text-white dark:text-accent border border-emerald-200 dark:border-slate-700 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider gap-2">
                     <ShieldCheck className="w-4 h-4 text-white dark:text-accent" />
                     <span>{t('srvPageBadge')}</span>
@@ -96,7 +96,7 @@ export default function ServicesPage() {
                 </p>
             </section>
 
-            <section className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <section className="w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {services.map((s, i) => (
                     <div 
                         key={i} 

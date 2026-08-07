@@ -17,7 +17,7 @@ export default function Footer() {
 
     return (
         <footer id="contact" className="bg-white dark:bg-slate-900/90 pt-16  border-t border-gray-100 dark:border-slate-800 scroll-mt-20 transition-colors duration-200">
-            <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div className="w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                 <div className="col-span-1 md:col-span-1">
                     <img src={theme === 'dark' ? logoDark : logo} alt="N6106 Logo" width="178" height="48" className="h-12 w-auto mb-6 filter dark:brightness-110" loading="lazy" decoding="async" />
                     <p className="text-gray-600 dark:text-slate-300 mb-6">{t('footerDesc')}</p>
@@ -67,7 +67,7 @@ export default function Footer() {
             </div>
             
             <div className="border-t border-gray-100 dark:border-slate-800 py-8 mt-8 bg-[#1d1f2e] dark:bg-slate-950 text-white">
-                <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between text-sm text-gray-400 dark:text-slate-400">
+                <div className="w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between text-sm text-gray-400 dark:text-slate-400">
                     <p>{t('footerRights')}</p>
                     <div className="flex gap-6 mt-4 md:mt-0">
                         <Link to="#" className="hover:text-white transition-colors">{t('footerTerms')}</Link>
