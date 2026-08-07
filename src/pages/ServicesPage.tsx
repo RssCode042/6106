@@ -96,7 +96,7 @@ export default function ServicesPage() {
                 </p>
             </section>
 
-            <section className="w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <section className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {services.map((s, i) => (
                     <div 
                         key={i} 
