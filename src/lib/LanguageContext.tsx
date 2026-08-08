@@ -307,7 +307,7 @@ export const translations = {
   footerNewBadge: { bg: 'Ново', en: 'New' },
   footerTerms: { bg: 'Общи условия', en: 'Terms & Conditions' },
   footerPrivacy: { bg: 'Политика за поверителност и бисквитки', en: 'Privacy & Cookie Policy' },
-  footerRights: { bg: '© 2026 „Ен Такси Стара Загора“ ЕООД. ЕИК: 123748541 Всички права запазени.', en: '© 2026 "En Taxi Stara Zagora" Ltd. UIC: 123748541 All rights reserved.' },
+  footerRights: { bg: '© 2026 „Ен Такси Стара Загора“ ЕООД. ЕИК: ' + import.meta.env.VITE_COMPANY_UIC + ' Всички права запазени.', en: '© 2026 "En Taxi Stara Zagora" Ltd. UIC: ' + import.meta.env.VITE_COMPANY_UIC + ' All rights reserved.' },
 
   // Cookie Consent & Call Widget
   cookieText: { 
@@ -326,7 +326,39 @@ export const translations = {
     bg: 'Обадете се на диспечер за моментална поръчка на такси в Стара Загора',
     en: 'Call dispatch for an instant taxi request in Stara Zagora'
   },
-  callNowFull: { bg: 'Обади се сега', en: 'Call Now' }
+  callNowFull: { bg: 'Обади се сега', en: 'Call Now' },
+
+  // Legal & Compliance
+  privacyCheckbox: { 
+    bg: 'Запознат съм с Политиката за поверителност и съм съгласен личните ми данни да бъдат обработени за целите на запитването.', 
+    en: 'I have read the Privacy Policy and agree to have my personal data processed for the purpose of this inquiry.' 
+  },
+  regulatorsTitle: { bg: 'Надзорни органи', en: 'Supervisory Authorities' },
+  regulatorDAI: { bg: 'ИА "Автомобилна администрация"', en: 'EA "Automobile Administration"' },
+  regulatorKZP: { bg: 'Комисия за защита на потребителите (КЗП)', en: 'Commission for Consumer Protection (KZP)' },
+  regulatorKZLD: { bg: 'Комисия за защита на личните данни (КЗЛД)', en: 'Commission for Personal Data Protection (KZLD)' },
+  appDisclaimerTitle: { bg: 'Условия на мобилното приложение', en: 'Mobile App Terms' },
+  appDisclaimerText: { 
+    bg: 'Реалните условия за ползване на услугата, гео-локацията и обработката на поръчки се уреждат в самото мобилно приложение.', 
+    en: 'The actual terms of service, geo-location, and order processing are governed within the mobile application itself.' 
+  },
+  externalLinksDisclaimerTitle: { bg: 'Външни препратки', en: 'External Links' },
+  externalLinksDisclaimerText: { 
+    bg: 'Този сайт предоставя връзки към платформи като Google Play и App Store. Ние не носим отговорност за техните политики за поверителност.', 
+    en: 'This site provides links to platforms such as Google Play and App Store. We are not responsible for their privacy policies.' 
+  },
+  
+  // Privacy Policy Page
+  privacyPageTitle: { bg: 'Политика за поверителност', en: 'Privacy Policy' },
+  privacyPageSubtitle: { bg: 'Вашите данни са важни за нас', en: 'Your data is important to us' },
+  
+  // Terms Page
+  termsPageTitle: { bg: 'Общи условия', en: 'Terms & Conditions' },
+  termsPageSubtitle: { bg: 'Правила за ползване на уебсайта', en: 'Rules for using the website' },
+  companyIdentification: { bg: 'Идентификация на търговеца', en: 'Merchant Identification' },
+  companyNameLabel: { bg: 'Търговско наименование:', en: 'Company Name:' },
+  companyUICLabel: { bg: 'ЕИК / БУЛСТАТ:', en: 'UIC / BULSTAT:' },
+  companyAddressLabel: { bg: 'Седалище и адрес на управление:', en: 'Registered Address:' }
 } as const;
 
 export type TranslationKey = keyof typeof translations;

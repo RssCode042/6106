@@ -70,8 +70,8 @@ export default function Footer() {
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between text-sm text-gray-400 dark:text-slate-400">
                     <p>{t('footerRights')}</p>
                     <div className="flex gap-6 mt-4 md:mt-0">
-                        <Link to="#" className="hover:text-white transition-colors">{t('footerTerms')}</Link>
-                        <Link to="#" className="hover:text-white transition-colors">{t('footerPrivacy')}</Link>
+                        <Link to="/terms" className="hover:text-white transition-colors">{t('footerTerms')}</Link>
+                        <Link to="/privacy" className="hover:text-white transition-colors">{t('footerPrivacy')}</Link>
                     </div>
                 </div>
             </div>

@@ -16,6 +16,9 @@ import AppRedirectPage from "./pages/AppRedirect";
 import ServicesPage from "./pages/ServicesPage";
 import { TARIFFS } from './lib/pricing';
 import ContactUs from "./pages/ContactUs";
+import NotFoundPage from "./pages/NotFoundPage";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 
 function Hero() {
@@ -483,6 +486,9 @@ function App() {
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/contact" element={<ContactUs />} />
               <Route path="/download-app" element={<AppRedirectPage />} />
+              <Route path="/terms" element={<TermsAndConditions />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="*" element={<NotFoundPage />} />
              {/* {   <Route path="/application" element={<ApplicationPage />} />
                 <Route path="/services" element={<ServicesPage />} />
                 <Route path="/download-app" element={<AppRedirectPage />} />

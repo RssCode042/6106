@@ -114,6 +114,25 @@ export default function ContactPage() {
                                     {lang === 'en' ? 'Call Now' : 'Обади се сега'}
                                 </a>
                             </div>
+
+                            {/* Regulatory Bodies */}
+                            <div className="mt-10 pt-8 border-t border-gray-100 dark:border-slate-800">
+                                <h3 className="text-xl font-bold text-gray-900 dark:text-slate-100 mb-6">{t('regulatorsTitle')}</h3>
+                                <div className="space-y-6">
+                                    <div>
+                                        <h4 className="font-semibold text-gray-800 dark:text-slate-200">{t('regulatorDAI')}</h4>
+                                        <p className="text-sm text-gray-600 dark:text-slate-400 mt-1">София 1000, ул. „Ген. Йосиф В. Гурко“ № 5<br/>Тел: 02 930 88 40<br/><a href="https://rta.government.bg/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-amber-400 hover:underline">rta.government.bg</a></p>
+                                    </div>
+                                    <div>
+                                        <h4 className="font-semibold text-gray-800 dark:text-slate-200">{t('regulatorKZP')}</h4>
+                                        <p className="text-sm text-gray-600 dark:text-slate-400 mt-1">София 1000, пл. „Славейков“ № 4А<br/>Гореща линия: 0700 111 22<br/><a href="https://kzp.bg/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-amber-400 hover:underline">kzp.bg</a></p>
+                                    </div>
+                                    <div>
+                                        <h4 className="font-semibold text-gray-800 dark:text-slate-200">{t('regulatorKZLD')}</h4>
+                                        <p className="text-sm text-gray-600 dark:text-slate-400 mt-1">София 1592, бул. „Проф. Цветан Лазаров” № 2<br/>Тел: 02 915 35 18<br/><a href="https://www.cpdp.bg/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-amber-400 hover:underline">cpdp.bg</a></p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -172,6 +191,19 @@ export default function ContactPage() {
                                     ></textarea>
                                 </div>
                                 
+                                
+                                <div className="flex items-start gap-3 mt-4 mb-2">
+                                    <input 
+                                        type="checkbox" 
+                                        id="privacy" 
+                                        required
+                                        className="mt-1 w-4 h-4 text-blue-900 bg-gray-50 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                    />
+                                    <label htmlFor="privacy" className="text-sm text-gray-600 dark:text-slate-400 leading-tight">
+                                        {t('privacyCheckbox')}
+                                    </label>
+                                </div>
+
                                 <button 
                                     type="submit"
                                     className="w-full bg-blue-900 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-500 text-white font-bold py-3.5 rounded-lg flex items-center justify-center gap-2 transition-all duration-200 shadow-md active:scale-[0.98]"

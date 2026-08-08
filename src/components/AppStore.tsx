@@ -52,10 +52,10 @@ export default function AppStore() {
                   </div>
                 </div>
               </div>
-              <span className="text-xs font-bold bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-300 px-3 py-1 rounded-full uppercase">
+              {/* <span className="text-xs font-bold bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-300 px-3 py-1 rounded-full uppercase">
               
                 {t('inDevelopmentBadge')}
-              </span>
+              </span> */}
             </div>
           )}
                <a href={googlePlayUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full md:w-60 mt-3 text-white bg-black dark:bg-white dark:text-black rounded-xl h-14 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group shadow-xl hover:shadow-blue-900/20">
