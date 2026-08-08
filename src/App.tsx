@@ -203,15 +203,15 @@ function Pricing() {
                 <div className="flex flex-col gap-6">
                     <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 p-6 rounded-lg shadow-sm flex-grow">
                         <h3 className="text-xl md:text-2xl font-bold mb-6 text-gray-900 dark:text-slate-100">{t('calcTitle')}</h3>
-                        <label className="block mb-2 font-medium text-gray-700 dark:text-slate-200">{t('distance')}: <span className="font-bold text-blue-900 dark:text-amber-400">{distance} {t('km')}</span></label>
-                        <input type="range" min="1" max="100" value={distance} onChange={e => setDistance(Number(e.target.value))} className="w-full mb-6 accent-blue-900 dark:accent-amber-400 cursor-pointer" />
+                        <label htmlFor="distance-input" className="block mb-2 font-medium text-gray-700 dark:text-slate-200">{t('distance')}: <span className="font-bold text-blue-900 dark:text-amber-400">{distance} {t('km')}</span></label>
+                        <input id="distance-input" aria-label={t('distance')} type="range" min="1" max="100" value={distance} onChange={e => setDistance(Number(e.target.value))} className="w-full mb-6 accent-blue-900 dark:accent-amber-400 cursor-pointer" />
                         
-                        <label className="block mb-2 font-medium text-gray-700 dark:text-slate-200">{t('stay')}: <span className="font-bold text-blue-900 dark:text-amber-400">{wait} {t('min')}</span></label>
-                        <input type="range" min="0" max="60" value={wait} onChange={e => setWait(Number(e.target.value))} className="w-full mb-6 accent-blue-900 dark:accent-amber-400 cursor-pointer" />
+                        <label htmlFor="wait-input" className="block mb-2 font-medium text-gray-700 dark:text-slate-200">{t('stay')}: <span className="font-bold text-blue-900 dark:text-amber-400">{wait} {t('min')}</span></label>
+                        <input id="wait-input" aria-label={t('stay')} type="range" min="0" max="60" value={wait} onChange={e => setWait(Number(e.target.value))} className="w-full mb-6 accent-blue-900 dark:accent-amber-400 cursor-pointer" />
                         
-                        <div className="flex bg-gray-200 dark:bg-slate-800 rounded-xl p-1 mb-6">
-                            <button onClick={() => setTariff('daily')} className={`flex-1 py-2 rounded-lg font-bold text-xs transition-all duration-200 ${tariff === 'daily' ? 'bg-white dark:bg-yellow text-gray-900 dark:text-slate-950 shadow' : 'text-gray-600 dark:text-slate-300 hover:text-gray-900'}`}>{t('dayTariff')}</button>
-                            <button onClick={() => setTariff('night')} className={`flex-1 py-2 rounded-lg font-bold text-xs transition-all duration-200 ${tariff === 'night' ? 'bg-white dark:bg-yellow text-gray-900 dark:text-slate-950 shadow' : 'text-gray-600 dark:text-slate-300 hover:text-gray-900'}`}>{t('nightTariff')}</button>
+                        <div className="flex bg-gray-200 dark:bg-slate-800 rounded-xl p-1 mb-6" role="group" aria-label="Tariff selection">
+                            <button aria-pressed={tariff === 'daily'} onClick={() => setTariff('daily')} className={`flex-1 py-2 rounded-lg font-bold text-xs transition-all duration-200 ${tariff === 'daily' ? 'bg-white dark:bg-yellow text-gray-900 dark:text-slate-950 shadow' : 'text-gray-600 dark:text-slate-300 hover:text-gray-900'}`}>{t('dayTariff')}</button>
+                            <button aria-pressed={tariff === 'night'} onClick={() => setTariff('night')} className={`flex-1 py-2 rounded-lg font-bold text-xs transition-all duration-200 ${tariff === 'night' ? 'bg-white dark:bg-yellow text-gray-900 dark:text-slate-950 shadow' : 'text-gray-600 dark:text-slate-300 hover:text-gray-900'}`}>{t('nightTariff')}</button>
                         </div>
                         
                         <div className="bg-blue-900 dark:bg-slate-800 dark:border dark:border-yellow/30 text-white p-6 rounded-lg text-center shadow-lg">
@@ -405,6 +405,7 @@ function CallToAction() {
             {/* Direct Call Button */}
             <a
               href="tel:+359426106"
+              aria-label={t('ctaCallBtn')}
               className="w-full bg-blue-900 hover:bg-blue-800 dark:bg-yellow dark:hover:bg-yellow/80 text-white dark:text-slate-950 font-extrabold py-4 px-6 rounded-lg text-base flex items-center justify-center gap-3 transition-all duration-200 shadow-lg shadow-blue-900/20 dark:shadow-yellow/10 active:scale-95 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
             >
               <Phone className="w-5 h-5 animate-bounce" />
