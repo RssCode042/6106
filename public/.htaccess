@@ -24,6 +24,8 @@
 </IfModule>
 
 <IfModule mod_headers.c>
+  Header set Content-Security-Policy "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net;"
+
   # For Vite hashed assets, add immutable cache control
   <FilesMatch "\.[a-f0-9]{8}\.(css|js|woff2|png|jpeg|jpg|webp|svg)$">
     Header set Cache-Control "max-age=31536000, public, immutable"
@@ -34,3 +36,4 @@
     Header set Cache-Control "no-cache, no-store, must-revalidate"
   </FilesMatch>
 </IfModule>
+
