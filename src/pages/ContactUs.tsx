@@ -2,8 +2,13 @@ import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Shield, Users, Award, CheckCircle2, Send, CheckCircle } from 'lucide-react';
 import SEO from '../components/SEO';
 import { useLanguage } from '../lib/LanguageContext';
+import AppStore from '../components/AppStore';
+import HeroImage from '../assets/ContactHero.png';
+
+
 
 export default function ContactPage() {
+
     const { t, lang } = useLanguage();
     const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -19,6 +24,33 @@ export default function ContactPage() {
         { label: t('statClientsLabel'), value: t('statClientsVal'), icon: Users }
     ];
 
+
+function HeroContact() {
+  const { t } = useLanguage();
+  return (
+    <section className="bg-gradient-to-br from-yellow-300 via-yellow to-yellow-600  flex items-center justify-center px-6 py-5 ">
+      <div className="max-w-7xl mx-auto flex items-center justify-between flex-col md:flex-row md:gap-8">
+        <div className="max-w-7xl text-center md:text-left">
+          <span className="bg-accent text-white px-3 py-1 rounded-full text-xs font-bold uppercase"> {t('heroBadge')}</span>
+          <h1 className="text-4xl md:text-6xl font-extrabold mt-4 leading-tight text-blue-950"> {t('heroTitle1')} <br className="hidden md:inline" />
+            <span className="">{t('heroTitle2')}</span></h1>
+          <p className="mt-6 text-lg md:text-xl text-blue-950">{t('heroDesc')}</p>
+          <AppStore />
+        </div>
+        <img
+          src={HeroImage}
+          alt="Ен Такси мобилно приложение"
+          width={300}
+          height={500}
+          fetchPriority="high"
+          decoding="async"
+          className="max-w-[300px] md:w-1/2 h-auto"
+        />
+      </div>
+    </section>
+  )
+}
+
     return (
         <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 pb-16">
             <SEO 
@@ -26,18 +58,9 @@ export default function ContactPage() {
                 description={lang === 'en' ? "Contact En Taxi Stara Zagora. Order a taxi at 042 6106. Learn more about our 30+ years of reliable services." : "Свържете се с Ен Такси Стара Загора. Поръчайте такси на 042 6106. Научете повече за нашите над 30 години опит."}
             />
 
-            {/* Header Section */}
-            <div className="bg-blue-900 dark:bg-slate-900 text-white rounded-lg p-10 md:p-16 mb-12 text-center relative overflow-hidden shadow-xl mt-4">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
-                <div className="absolute bottom-0 left-0 w-48 h-48 bg-amber-400 opacity-10 rounded-full blur-2xl transform -translate-x-1/2 translate-y-1/2"></div>
-                <div className="relative z-10">
-                    <span className="bg-amber-500/20 text-amber-300 px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wider mb-6 inline-block border border-amber-500/30">N6106</span>
-                    <h1 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">{lang === 'en' ? 'Contact & About Us' : 'Контакти и За Нас'}</h1>
-                    <p className="text-xl md:text-2xl text-blue-100 dark:text-slate-300 max-w-2xl mx-auto opacity-90">{t('contactPageSubtitle')}</p>
-                </div>
-            </div>
+            <HeroContact />
 
-            <div className="max-w-6xl mx-auto space-y-20 px-4 md:px-0">
+            <div className="max-w-7xl mx-auto space-y-20 px-4 py-8 md:px-8">
                 {/* Contact Section */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     {/* Contact Info */}

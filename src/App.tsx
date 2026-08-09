@@ -10,6 +10,7 @@ import { ThemeProvider } from "./lib/ThemeContext";
 import HeroImage from "./assets/HeroImage.png";
 import AboutImage from "./assets/AboutUs.png";
 import AppStore from "./components/AppStore";
+import ApplicationPage from "./pages/ApplicationPage";
 import CookieConsent from "./components/CookieConsent";
 import { TARIFFS } from './lib/pricing';
 
@@ -448,8 +449,8 @@ function Home() {
   const { lang } = useLanguage();
 
   const seoTitle = lang === 'en'
-    ? "En Taxi Stara Zagora 6106 | Fast and Reliable 24/7 Taxi Services"
-    : "Ен Такси Стара Загора 6106 | Бързи и надеждни таксиметрови услуги 24/7";
+    ? "En Taxi Stara Zagora 6106 | Fast and Reliable Taxi Services"
+    : "Ен Такси Стара Загора 6106 | Бързи и надеждни таксиметрови услуги.";
 
   const seoDesc = lang === 'en'
     ? "Official website of En Taxi Stara Zagora 6106. Quick taxi request at 042 6106 or via mobile app. Day and night rates, airport transfers, and 24/7 service."
@@ -491,6 +492,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/services" element={<ServicesPage />} />
+                <Route path="/application" element={<ApplicationPage />} />
                 <Route path="/contact" element={<ContactUs />} />
                 <Route path="/download-app" element={<AppRedirectPage />} />
                 <Route path="/terms" element={<TermsAndConditions />} />
