@@ -16,7 +16,7 @@ const DEFAULT_KEYWORDS = 'такси Стара Загора, поръчка н�
 // Always read from env so staging builds and production never mix URLs
 const SITE_URL = (import.meta.env.VITE_DOMAIN as string | undefined)?.replace(/;$/, '') || 'https://6106.bg';
 // Use a raster image for og:image — SVG is not supported by Facebook / Twitter
-const DEFAULT_OG_IMAGE = `${SITE_URL}/assets/OG.png`;
+const DEFAULT_OG_IMAGE = `${SITE_URL}/OG.png`;
 
 // Main TaxiService & LocalBusiness JSON-LD Schema
 export const mainTaxiSchema = {
