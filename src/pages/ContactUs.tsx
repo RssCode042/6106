@@ -18,11 +18,7 @@ export default function ContactPage() {
         setTimeout(() => setIsSubmitted(false), 5000);
     };
 
-    const stats = [
-        { label: t('statYearsLabel'), value: t('statYearsVal'), icon: Clock },
-        { label: t('statCarsLabel'), value: t('statCarsVal'), icon: Award },
-        { label: t('statClientsLabel'), value: t('statClientsVal'), icon: Users }
-    ];
+    
 
 
 function HeroContact() {
