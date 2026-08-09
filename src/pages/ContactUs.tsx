@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Shield, Users, Award, CheckCircle2, Send, CheckCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Shield, CheckCircle2, Send, CheckCircle } from 'lucide-react';
 import SEO from '../components/SEO';
 import { useLanguage } from '../lib/LanguageContext';
 import AppStore from '../components/AppStore';
