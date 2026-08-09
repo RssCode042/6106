@@ -114,25 +114,6 @@ export default function ContactPage() {
                                     {lang === 'en' ? 'Call Now' : 'Обади се сега'}
                                 </a>
                             </div>
-
-                            {/* Regulatory Bodies */}
-                            <div className="mt-10 pt-8 border-t border-gray-100 dark:border-slate-800">
-                                <h3 className="text-xl font-bold text-gray-900 dark:text-slate-100 mb-6">{t('regulatorsTitle')}</h3>
-                                <div className="space-y-6">
-                                    <div>
-                                        <h4 className="font-semibold text-gray-800 dark:text-slate-200">{t('regulatorDAI')}</h4>
-                                        <p className="text-sm text-gray-600 dark:text-slate-400 mt-1">София 1000, ул. „Ген. Йосиф В. Гурко“ № 5<br/>Тел: 02 930 88 40<br/><a href="https://rta.government.bg/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-amber-400 hover:underline">rta.government.bg</a></p>
-                                    </div>
-                                    <div>
-                                        <h4 className="font-semibold text-gray-800 dark:text-slate-200">{t('regulatorKZP')}</h4>
-                                        <p className="text-sm text-gray-600 dark:text-slate-400 mt-1">София 1000, пл. „Славейков“ № 4А<br/>Гореща линия: 0700 111 22<br/><a href="https://kzp.bg/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-amber-400 hover:underline">kzp.bg</a></p>
-                                    </div>
-                                    <div>
-                                        <h4 className="font-semibold text-gray-800 dark:text-slate-200">{t('regulatorKZLD')}</h4>
-                                        <p className="text-sm text-gray-600 dark:text-slate-400 mt-1">София 1592, бул. „Проф. Цветан Лазаров” № 2<br/>Тел: 02 915 35 18<br/><a href="https://www.cpdp.bg/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-amber-400 hover:underline">cpdp.bg</a></p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
@@ -244,22 +225,6 @@ export default function ContactPage() {
                         />
                     </div>
                 </section>
-
-                {/* Stats */}
-                <section className="bg-white dark:bg-slate-900 rounded-lg p-10 shadow-lg border border-gray-100 dark:border-slate-800 relative overflow-hidden">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {stats.map((s, i) => (
-                            <div key={i} className="text-center p-6 group">
-                                <div className="w-16 h-16 bg-blue-50 dark:bg-slate-800 text-blue-900 dark:text-amber-400 rounded-lg flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-900 dark:group-hover:bg-amber-500 group-hover:text-white dark:group-hover:text-slate-950 transition-colors duration-300">
-                                    <s.icon className="w-8 h-8" />
-                                </div>
-                                <div className="text-4xl md:text-5xl font-black text-gray-900 dark:text-slate-100 mb-2">{s.value}</div>
-                                <div className="text-sm md:text-base text-gray-600 dark:text-slate-400 font-bold uppercase tracking-wider">{s.label}</div>
-                            </div>
-                        ))}
-                    </div>
-                </section>
-
                 {/* Mission */}
                 <section className="text-center max-w-3xl mx-auto bg-gray-50 dark:bg-slate-900/60 p-12 rounded-lg border border-gray-100 dark:border-slate-800">
                     <Shield className="w-12 h-12 text-amber-500 mx-auto mb-6" />
