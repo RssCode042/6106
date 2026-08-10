@@ -180,7 +180,7 @@ function AboutUs() {
 }
 
 function Pricing() {
-  const { t, lang } = useLanguage();
+  const { t } = useLanguage();
   const [distance, setDistance] = useState(30);
   const [wait, setWait] = useState(0);
   const [tariff, setTariff] = useState<'daily' | 'night'>('daily');

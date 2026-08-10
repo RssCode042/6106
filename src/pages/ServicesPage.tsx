@@ -155,7 +155,7 @@ export default function ServicesPage() {
                                     { bg: 'Велико Търново', en: 'Veliko Tarnovo', km: 110 },
                                 ].map((dest, i) => {
                                     const eurPrice = Math.round(dest.km * TARIFFS.INTERCITY_EUR + TARIFFS.DAY_INITIAL_EUR + TARIFFS.DAY_WAIT_EUR);
-                                    const bgnPrice = Math.round(eurPrice * TARIFFS.EUR_TO_BGN);
+        
                                     return (
                                         <tr key={i} className="border-b border-gray-100 dark:border-slate-800 hover:bg-gray-50/50 dark:hover:bg-slate-800/30 transition-colors">
                                             <td className="py-4 px-6 text-gray-800 dark:text-slate-300 font-semibold">{lang === 'en' ? dest.en : dest.bg}</td>
