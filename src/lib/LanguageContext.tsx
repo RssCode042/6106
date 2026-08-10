@@ -23,7 +23,7 @@ export const translations = {
   },
   heroCallBtn: { bg: 'Обади се: 042 6106', en: 'Call: 042 6106' },
   heroAppBtn: { bg: 'Мобилно приложение', en: 'Mobile App' },
-  heroCarAlt: { bg: 'Ен Такси Автомобил Стара Загора', en: 'En Taxi Vehicle Stara Zagora' },
+  heroCarAlt: { bg: 'Ен Такси Автомобил Стара Загора', en: 'N Taxi Vehicle Stara Zagora' },
 
   // Homepage Services Summary
   servicesBadge: { bg: 'Какво предлагаме', en: 'What We Offer' },
@@ -51,7 +51,7 @@ export const translations = {
   aboutTitle: { bg: '30 години традиция и сигурност по улиците на Стара Загора', en: '30 years of tradition and safety on the streets of Stara Zagora' },
   aboutDesc: { 
     bg: 'Основана в началото на 90-те години, Ен Такси започна своя път с една мисия – да предложи на жителите и гостите на Стара Загора сигурен, точен и достъпен транспорт. Днес, повече от три десетилетия по-късно, ние сме утвърден лидер с модерен автопарк и екип от професионалисти. За нас всяко пътуване не е просто дестинация, а отговорност към твоето доверие.',
-    en: 'Founded in the early 1990s, En Taxi began its journey with a single mission – to offer the residents and visitors of Stara Zagora safe, punctual, and affordable transportation. Today, more than three decades later, we are an established leader with a modern fleet and a team of professionals. For us, every ride is not just a destination, but a responsibility to your trust.'
+    en: 'Founded in the early 1990s, N Taxi began its journey with a single mission – to offer the residents and visitors of Stara Zagora safe, punctual, and affordable transportation. Today, more than three decades later, we are an established leader with a modern fleet and a team of professionals. For us, every ride is not just a destination, but a responsibility to your trust.'
   },
   statYearsVal: { bg: '30+', en: '30+' },
   statYearsLabel: { bg: 'Години Опит', en: 'Years Experience' },
@@ -92,7 +92,7 @@ export const translations = {
 
   // Why Choose Us Section
   whyBadge: { bg: 'Вашият доверен избор', en: 'Your Trusted Choice' },
-  whyTitle: { bg: 'Защо да изберете Ен Такси Стара Загора', en: 'Why Choose En Taxi Stara Zagora' },
+  whyTitle: { bg: 'Защо да изберете Ен Такси Стара Загора', en: 'Why Choose N Taxi Stara Zagora' },
   whySubtitle: { 
     bg: 'Повече от 30 години осигуряваме сигурност, комфорт и коректност за нашите съграждани.',
     en: 'For over 30 years we have provided safety, comfort, and reliability to our citizens.'
@@ -157,8 +157,8 @@ export const translations = {
   faqBadge: { bg: 'Въпроси и отговори', en: 'FAQ' },
   faqTitle: { bg: 'Често задавани въпроси', en: 'Frequently Asked Questions' },
   faqSubtitle: { 
-    bg: 'Всичко, което трябва да знаете за поръчката на такси, цените и услугите на Ен Такси Стара Загора.',
-    en: 'Everything you need to know about ordering a taxi, fares, and services at En Taxi Stara Zagora.'
+    bg: 'Всичко, което трябва да знаете за поръчката на такси, цените и услугите на Н Такси Стара Загора.',
+    en: 'Everything you need to know about ordering a taxi, fares, and services at N Taxi Stara Zagora.'
   },
 
   //CTA Section
@@ -358,7 +358,37 @@ export const translations = {
   companyIdentification: { bg: 'Идентификация на търговеца', en: 'Merchant Identification' },
   companyNameLabel: { bg: 'Търговско наименование:', en: 'Company Name:' },
   companyUICLabel: { bg: 'ЕИК / БУЛСТАТ:', en: 'UIC / BULSTAT:' },
-  companyAddressLabel: { bg: 'Седалище и адрес на управление:', en: 'Registered Address:' }
+  companyAddressLabel: { bg: 'Седалище и адрес на управление:', en: 'Registered Address:' },
+
+  // Application Page
+  AppHeroBadge: { bg: 'Бърза поръчка 24/7', en: 'Quick Order 24/7' },
+  AppHeroTitle1: { bg: 'Мобилно приложение за такси', en: 'Mobile Taxi App' },
+  AppHeroTitle2: { bg: 'Всеки момент, всяка дума', en: 'Any Moment, Any Word' },
+  AppHeroDesc: { bg: 'Най-бързият начин да получите такси в Стара Загора', en: 'The fastest way to get a taxi in Stara Zagora' },
+
+  App1Title: { bg: 'Бърза поръчка', en: 'Quick Order' },
+  App1Desc: { bg: 'Поръчайте такси във веднага, когато ви е нужно', en: 'Order a taxi immediately when you need it' },
+
+  App2Title: { bg: '24/7 Денонощно обслужване', en: '24/7 Round-the-Clock Service' },
+  App2Desc: { bg: 'Ние сме налични всеки ден, във всяко време', en: 'We are available every day, at any time' },
+
+  App3Title: { bg: 'Изгодни тарифи', en: 'Affordable Rates' },
+  App3Desc: { bg: 'Получавайте такси по изгодни цени', en: 'Get taxis at affordable prices' },
+
+  App4Title: { bg: 'Сигурност и комфорт', en: 'Safety and Comfort' },
+  App4Desc: { bg: 'Нашите шофьори са професионални и обучени', en: 'Our drivers are professional and trained' },
+
+  AppHowItWorkTitle: { bg: 'Как работи?', en: 'How It Works?' },
+  AppStep1Title: { bg: 'Изтеглете приложението', en: 'Download the App' },
+  AppStep1Desc: { bg: 'Наличен за iOS и Android устройства', en: 'Available for iOS and Android devices' },
+  AppStep2Title: { bg: 'Регистрирайте се или влезте', en: 'Sign Up or Log In' },
+  AppStep2Desc: { bg: 'Създайте профил или използвайте съществуващ', en: 'Create a profile or use an existing one' },
+  AppStep3Title: { bg: 'Поръчайте такси с няколко клика', en: 'Order a Taxi in a Few Clicks' },
+  AppStep3Desc: { bg: 'Изберете местоположение и потвърдете поръчката', en: 'Select your location and confirm the order' },
+  AppStep4Title: { bg: 'Проследете пристигането на автомобила', en: 'Track Your Taxi Arrival' },
+  AppStep4Desc: { bg: 'Вижте движението на автомобила в реално време', en: 'See the vehicle movement in real time' },
+  AppStep5Title: { bg: 'Плащане и оценка на услугата', en: 'Payment and Service Rating' },
+  AppStep5Desc: { bg: 'Платете с карта или в брой и оценете шофьора', en: 'Pay by card or cash and rate your driver' }
 } as const;
 
 export type TranslationKey = keyof typeof translations;

@@ -138,7 +138,6 @@ export default function ServicesPage() {
                                 <tr className="bg-gray-50 dark:bg-slate-800/80 border-b border-gray-200 dark:border-slate-700">
                                     <th className="py-4 px-6 text-sm font-bold text-gray-900 dark:text-slate-200">{t('destName')}</th>
                                     <th className="py-4 px-6 text-sm font-bold text-gray-900 dark:text-slate-200">{t('destDistance')}</th>
-                                    <th className="py-4 px-6 text-sm font-bold text-gray-900 dark:text-slate-200">{t('destPriceBGN')}</th>
                                     <th className="py-4 px-6 text-sm font-bold text-gray-900 dark:text-slate-200">{t('destPriceEUR')}</th>
                                 </tr>
                             </thead>
@@ -161,7 +160,6 @@ export default function ServicesPage() {
                                         <tr key={i} className="border-b border-gray-100 dark:border-slate-800 hover:bg-gray-50/50 dark:hover:bg-slate-800/30 transition-colors">
                                             <td className="py-4 px-6 text-gray-800 dark:text-slate-300 font-semibold">{lang === 'en' ? dest.en : dest.bg}</td>
                                             <td className="py-4 px-6 text-gray-600 dark:text-slate-400">{dest.km} km</td>
-                                            <td className="py-4 px-6 text-blue-900 dark:text-amber-400 font-bold">{bgnPrice} лв.</td>
                                             <td className="py-4 px-6 text-accent font-bold">~ €{eurPrice}</td>
                                         </tr>
                                     );

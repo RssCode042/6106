@@ -23,16 +23,16 @@ export default function Footer() {
                     <p className="text-gray-600 dark:text-slate-300 mb-6">{t('footerDesc')}</p>
                     <div className="flex gap-4">
                         <Link to={import.meta.env.VITE_FACEBOOK_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center">
-                            <img src={Facebook} alt="Facebook" className="h-8 w-auto inline text-brand stroke-yellow" />
+                            <img src={Facebook} alt="Facebook" className="h-6 w-auto inline text-brand stroke-yellow" />
                         </Link>
                         <Link to={import.meta.env.VITE_TIKTOK_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center">
-                            <img src={TikTok} alt="TikTok" className="h-8 w-auto inline" />
+                            <img src={TikTok} alt="TikTok" className="h-6  w-auto inline" />
                         </Link>
                         <Link to={import.meta.env.VITE_YOUTUBE_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center">
-                            <img src={YouTube} alt="YouTube" className="h-8 w-auto inline" />
+                            <img src={YouTube} alt="YouTube" className="h-6 w-auto inline" />
                         </Link>
                         <Link to={import.meta.env.VITE_INSTAGRAM_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center">
-                            <img src={Instagram} alt="Instagram" className="h-8 w-auto inline" />
+                            <img src={Instagram} alt="Instagram" className="h-6 w-auto inline" />
                         </Link>
                     </div>
                 </div>

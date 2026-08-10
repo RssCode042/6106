@@ -74,8 +74,8 @@ export const mainTaxiSchema = {
             },
             'priceSpecification': {
               '@type': 'UnitPriceSpecification',
-              'price': '1.66',
-              'priceCurrency': 'BGN',
+              'price': '0.85',
+              'priceCurrency': 'EUR',
               'unitText': 'на километър'
             }
           },
@@ -87,8 +87,8 @@ export const mainTaxiSchema = {
             },
             'priceSpecification': {
               '@type': 'UnitPriceSpecification',
-              'price': '1.86',
-              'priceCurrency': 'BGN',
+              'price': '0.95',
+              'priceCurrency': 'EUR',
               'unitText': 'на километър'
             }
           }

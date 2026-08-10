@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Shield, CheckCircle2, Send, CheckCircle } from 'lucide-react';
 import SEO from '../components/SEO';
 import { useLanguage } from '../lib/LanguageContext';
-import AppStore from '../components/AppStore';
-import HeroImage from '../assets/ContactHero.png';
+
 
 
 
@@ -18,43 +17,40 @@ export default function ContactPage() {
         setTimeout(() => setIsSubmitted(false), 5000);
     };
 
-    
+    const contactSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    '@id': `${import.meta.env.VITE_DOMAIN}/contact`,
+    'url': `${import.meta.env.VITE_DOMAIN}/contact`,
+    'name': 'Контакти - Ен Такси Стара Загора',
+    'mainEntity': {
+        '@type': 'TaxiService',
+        '@id': `${import.meta.env.VITE_DOMAIN}/#organization`,
+        'name': 'Ен Такси Стара Загора',
+        'telephone': '+359426106',
+        'email': import.meta.env.VITE_CONTACT_EMAIL,
+        'address': {
+        '@type': 'PostalAddress',
+        'streetAddress': 'бул. Цар Симеон Велики 1',
+        'addressLocality': 'Стара Загора',
+        'postalCode': '6000',
+        'addressCountry': 'BG'
+        }
+  }
+};
 
 
-function HeroContact() {
-  const { t } = useLanguage();
-  return (
-    <section className="bg-gradient-to-br from-yellow-300 via-yellow to-yellow-600  flex items-center justify-center px-6 py-5 ">
-      <div className="max-w-7xl mx-auto flex items-center justify-between flex-col md:flex-row md:gap-8">
-        <div className="max-w-7xl text-center md:text-left">
-          <span className="bg-accent text-white px-3 py-1 rounded-full text-xs font-bold uppercase"> {t('heroBadge')}</span>
-          <h1 className="text-4xl md:text-6xl font-extrabold mt-4 leading-tight text-blue-950"> {t('heroTitle1')} <br className="hidden md:inline" />
-            <span className="">{t('heroTitle2')}</span></h1>
-          <p className="mt-6 text-lg md:text-xl text-blue-950">{t('heroDesc')}</p>
-          <AppStore />
-        </div>
-        <img
-          src={HeroImage}
-          alt="Ен Такси мобилно приложение"
-          width={300}
-          height={500}
-          fetchPriority="high"
-          decoding="async"
-          className="max-w-[300px] md:w-1/2 h-auto"
-        />
-      </div>
-    </section>
-  )
-}
+
 
     return (
         <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 pb-16">
             <SEO 
                 title={lang === 'en' ? "Contact & About Us | En Taxi Stara Zagora" : "Контакти и За Нас | Ен Такси Стара Загора"}
                 description={lang === 'en' ? "Contact En Taxi Stara Zagora. Order a taxi at 042 6106. Learn more about our 30+ years of reliable services." : "Свържете се с Ен Такси Стара Загора. Поръчайте такси на 042 6106. Научете повече за нашите над 30 години опит."}
+                canonicalUrl={`${import.meta.env.VITE_DOMAIN}/contact`}
+                schema={contactSchema}
             />
 
-            <HeroContact />
 
             <div className="max-w-7xl mx-auto space-y-20 px-4 py-8 md:px-8">
                 {/* Contact Section */}
@@ -238,7 +234,7 @@ function HeroContact() {
                     <div className="w-full md:w-1/2 relative">
                         <div className="absolute inset-0 bg-blue-100 dark:bg-slate-800 rounded-lg transform translate-x-4 translate-y-4 -z-10"></div>
                         <img 
-                            src="https://images.unsplash.com/photo-1542385150-13f533a1e27c?auto=format&fit=crop&w=800&q=80" 
+                            src="https://images.unsplash.com/random/" 
                             alt="Taxi fleet" 
                             className="rounded-lg shadow-xl border-4 border-white dark:border-slate-900 w-full object-cover h-[450px]"
                         />

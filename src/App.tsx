@@ -200,16 +200,16 @@ function Pricing() {
             <h3 className="text-xl md:text-2xl font-bold mb-6 text-gray-900 dark:text-slate-100">{t('pricingTableTitle')}</h3>
             <div className="space-y-4">
               {[
-                { label: t('pricePerKm'), daily: import.meta.env.VITE_DAY_PRICE_PER_KM_EUR + " EUR / " + (import.meta.env.VITE_DAY_PRICE_PER_KM_EUR * import.meta.env.VITE_EUR_TO_BGN_RATE).toFixed(2) + " BGN", night: import.meta.env.VITE_NIGHT_PRICE_PER_KM_EUR + " EUR / " + (import.meta.env.VITE_NIGHT_PRICE_PER_KM_EUR * import.meta.env.VITE_EUR_TO_BGN_RATE).toFixed(2) + " BGN" },
-                { label: t('initialFee'), daily: import.meta.env.VITE_DAY_INITIAL_FEE_EUR + " EUR / " + (import.meta.env.VITE_DAY_INITIAL_FEE_EUR * import.meta.env.VITE_EUR_TO_BGN_RATE).toFixed(2) + " BGN", night: import.meta.env.VITE_NIGHT_INITIAL_FEE_EUR + " EUR / " + (import.meta.env.VITE_NIGHT_INITIAL_FEE_EUR * import.meta.env.VITE_EUR_TO_BGN_RATE).toFixed(2) + " BGN" },
+                { label: t('pricePerKm'), daily: import.meta.env.VITE_DAY_PRICE_PER_KM_EUR + " EUR" , night: import.meta.env.VITE_NIGHT_PRICE_PER_KM_EUR + " EUR" },
+                { label: t('initialFee'), daily: import.meta.env.VITE_DAY_INITIAL_FEE_EUR + " EUR", night: import.meta.env.VITE_NIGHT_INITIAL_FEE_EUR + " EUR" },
                 { label: t('callFee'), daily: t('free'), night: t('free') },
-                { label: t('waitTime'), daily: import.meta.env.VITE_DAY_WAIT_FEE_EUR + " EUR / " + (import.meta.env.VITE_DAY_WAIT_FEE_EUR * import.meta.env.VITE_EUR_TO_BGN_RATE).toFixed(2) + " BGN", night: import.meta.env.VITE_NIGHT_WAIT_FEE_EUR + " EUR / " + (import.meta.env.VITE_NIGHT_WAIT_FEE_EUR * import.meta.env.VITE_EUR_TO_BGN_RATE).toFixed(2) + " BGN" },
+                { label: t('waitTime'), daily: import.meta.env.VITE_DAY_WAIT_FEE_EUR + " EUR", night: import.meta.env.VITE_NIGHT_WAIT_FEE_EUR + " EUR" },
               ].map((item, idx) => (
                 <div key={idx} className="border-b border-gray-100 dark:border-slate-800 pb-4">
                   <div className="font-semibold text-gray-700 dark:text-slate-200 mb-2">{item.label}</div>
                   <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div className="bg-gray-50 dark:bg-slate-800 dark:text-slate-200 p-2.5 rounded-lg border border-gray-100 dark:border-slate-700">{t('dayTariff')}: <span className="font-bold text-gray-900 dark:text-amber-400">{item.daily}</span></div>
-                    <div className="bg-gray-50 dark:bg-slate-800 dark:text-slate-200 p-2.5 rounded-lg border border-gray-100 dark:border-slate-700">{t('nightTariff')}: <span className="font-bold text-gray-900 dark:text-amber-400">{item.night}</span></div>
+                    <div className="bg-gray-50 dark:bg-slate-800 dark:text-slate-200 p-2.5 rounded-lg flex justify-between border border-gray-100 dark:border-slate-700">{t('dayTariff')}: <span className="font-bold text-gray-900 dark:text-amber-400">{item.daily}</span></div>
+                    <div className="bg-gray-50 flex justify-between dark:bg-slate-800 dark:text-slate-200 p-2.5 rounded-lg border border-gray-100 dark:border-slate-700">{t('nightTariff')}: <span className="font-bold text-gray-900 dark:text-amber-400">{item.night}</span></div>
                   </div>
                 </div>
               ))}
@@ -234,7 +234,7 @@ function Pricing() {
               <div className="bg-blue-900 dark:bg-slate-800 dark:border dark:border-yellow/30 text-white p-6 rounded-lg text-center shadow-lg">
                 <div className="text-sm opacity-80 dark:text-slate-300">{t('approxPrice')}</div>
                 <div className="text-3xl md:text-4xl font-black mt-1 text-yellow">{price.toFixed(2)} EUR</div>
-                <div className="text-sm opacity-90 mt-1 dark:text-slate-300 font-semibold">{(price * 1.95583).toFixed(2)} {lang === 'bg' ? 'лв.' : 'BGN'}</div>
+                {/* <div className="text-sm opacity-90 mt-1 dark:text-slate-300 font-semibold">{(price * 1.95583).toFixed(2)} {lang === 'bg' ? 'лв.' : 'BGN'}</div> */}
               </div>
               <p className="text-xs text-gray-500 dark:text-slate-400 mt-4 italic">{t('calcDisclaimer')}</p>
             </div>
