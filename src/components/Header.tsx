@@ -29,7 +29,7 @@ export default function Header() {
     <header className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100 dark:border-slate-800 transition-colors duration-200">
       <div className="flex items-center justify-between p-4 max-w-7xl mx-auto gap-2">
         <Link to="/" className="flex items-center transition-transform duration-200 hover:scale-105 active:scale-95">
-          <img src={theme === 'dark' ? logoDark : logo} alt="N6106 Logo" width="128" height="40" className="h-8 w-auto filter dark:brightness-110" decoding="async" />
+          <img src={theme === 'dark' ? logoDark : logo} alt="6106 Logo" width="128" height="40" className="h-8 w-auto filter dark:brightness-110" decoding="async" />
         </Link>
     
         {/* Desktop Menu */}
