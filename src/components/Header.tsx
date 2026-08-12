@@ -107,40 +107,6 @@ export default function Header() {
             <a href="#about" onClick={() => setIsOpen(false)} className="px-4 py-3 rounded-xl font-semibold text-base text-gray-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-800 transition-all duration-200">{t('navAbout')}</a>
             <a href="#contact" onClick={() => setIsOpen(false)} className="px-4 py-3 rounded-xl font-semibold text-base text-gray-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-800 transition-all duration-200">{t('navContact')}</a>
             
-            <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-slate-800/80 rounded-xl mt-2 border border-gray-100 dark:border-slate-700">
-              <span className="text-sm font-semibold text-gray-600 dark:text-slate-300 flex items-center gap-1.5">
-                <Globe className="w-4 h-4 text-blue-900 dark:text-amber-400" />
-                <span>Език / Language</span>
-              </span>
-              <div className="flex bg-white dark:bg-slate-900 p-1 rounded-lg border border-gray-200 dark:border-slate-700 text-xs font-bold">
-                <button
-                  onClick={() => setLang('bg')}
-                  className={`px-3 py-1 rounded-md transition-all ${lang === 'bg' ? 'bg-blue-900 dark:bg-amber-500 text-white dark:text-slate-950' : 'text-gray-600 dark:text-slate-300'}`}
-                >
-                  🇧🇬 BG
-                </button>
-                <button
-                  onClick={() => setLang('en')}
-                  className={`px-3 py-1 rounded-md transition-all ${lang === 'en' ? 'bg-blue-900 dark:bg-amber-500 text-white dark:text-slate-950' : 'text-gray-600 dark:text-slate-300'}`}
-                >
-                  🇬🇧 EN
-                </button>
-              </div>
-            </div>
-
-            <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-slate-800/80 rounded-xl border border-gray-100 dark:border-slate-700">
-              <span className="text-sm font-semibold text-gray-600 dark:text-slate-300 flex items-center gap-1.5">
-                {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-blue-900" />}
-                <span>{theme === 'dark' ? 'Тъмна тема / Dark theme' : 'Светла тема / Light theme'}</span>
-              </span>
-              <button
-                onClick={toggleTheme}
-                className="px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-900 dark:bg-amber-500 text-white dark:text-slate-950 transition-all"
-              >
-                {theme === 'dark' ? '☀️ Light' : '🌙 Dark'}
-              </button>
-            </div>
-
             <a href="#contact" onClick={() => setIsOpen(false)} className="mt-2 w-full text-center bg-blue-900 dark:bg-amber-500 dark:text-slate-950 text-white py-3 rounded-xl font-bold shadow-md active:scale-98 transition-all duration-200">
               {t('navOrderNow')}
             </a>
