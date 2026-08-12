@@ -66,7 +66,7 @@ export default function Footer() {
                 </div>
             </div>
             
-            <div className="border-t border-gray-100 dark:border-slate-800 py-8 mt-8 bg-[#1d1f2e] dark:bg-slate-950 text-white">
+            <div className="border-t border-gray-100 dark:border-slate-800 p-4 mt-8 bg-[#1d1f2e] dark:bg-slate-950 text-white">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between text-sm text-gray-400 dark:text-slate-400">
                     <p>{t('footerRights')}</p>
                     <div className="flex gap-6 mt-4 md:mt-0">

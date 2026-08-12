@@ -12,13 +12,14 @@ export function isStoreUrlValid(url?: string | null): boolean {
 
 export default function AppStore() {
 
-    const { t } = useLanguage();
+    const { t, lang } = useLanguage();
     
     const appStoreUrl = import.meta.env.VITE_APP_STORE_URL || '';
     const googlePlayUrl = import.meta.env.VITE_GOOGLE_PLAY_URL || '';
+    const onlineLink = import.meta.env.VITE_ONLINE_LINK || '';
     
   return (
-    
+    <div>
    <div className="flex flex-col md:flex-row gap-4 mt-8 justify-center md:justify-start">
     {isStoreUrlValid(appStoreUrl) ? (
                <a href={appStoreUrl} target="_blank" rel="noopener noreferrer" className="flex flex-wrap items-center justify-center w-full md:w-60 mt-3 text-white bg-black dark:bg-white dark:text-black h-14 rounded-xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group shadow-xl hover:shadow-blue-900/20">
@@ -81,5 +82,25 @@ export default function AppStore() {
                </div>
            </a>
            </div>
+           
+             <div className="h-fit bg-white/80 rounded-lg flex flex-row p-4 mt-4 shadow-md max-w-[500px] gap-4 ">
+              <div><AlertCircle className="text-blue-600 w-10  h-10 bg-blue-100  p-2 rounded-full" />
+              </div>
+              <div className="">
+                <h4 className="text-left text-blue-700 font-bold pt-2">{lang === 'en' ? "For the iOS users." : "За притежателите на iOS"}</h4>
+                <p className="text-left text-sm py-4 text-gray-700"> {lang === 'en' ? "While the iOS app is in development, you can use our web-based application." : "Докато приложението за iOS е в процес на разработка може да използвате уеб базираното приложение."}</p>
+                <div className="flex justify-end">
+                <a href={onlineLink} target="_blank" rel="noopener noreferrer" className="w-fit self-center text-center bg-gray-100 hover:bg-gray-200 border border-gray-400 text-gray-700 hover:text-blue-700 font-semibold py-2 px-4 rounded-lg">
+               {lang === 'en' ? "Order Online" : "Поръчай онлайн"}
+             </a>
+             </div>
+              </div>
+            </div>
+             
+             
+             
+           </div>
+          
+           
   );
 }

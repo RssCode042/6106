@@ -1,6 +1,11 @@
 import { useLanguage } from "../lib/LanguageContext";
 import AppStore from '../components/AppStore';
+import homeScreen from '../assets/homeScreen.png';
+import searchScreen from '../assets/searchScreen.png';
 import HeroImage from '../assets/ContactHero.png';
+import travelScreen from '../assets/travelScreen.png';
+import orderScreen from '../assets/orderScreen.png';
+import ariveScreen from '../assets/ariveScreen.png';
 import { Clock, Euro, Shield, Leaf, Smartphone, CheckCircle2, PhoneCall, Phone, ArrowRight } from "lucide-react";
 
 
@@ -10,9 +15,9 @@ export default function ApplicationPage() {
     function HeroApp() {
       const { t } = useLanguage();
       return (
-        <section className="bg-gradient-to-br from-yellow-300 via-yellow to-yellow-600  flex items-center justify-center px-6 py-5 ">
-          <div className="max-w-7xl mx-auto flex justify-between flex-col md:flex-row md:gap-8">
-            <div className="text-center md:text-left lg:mt-8">
+        <section className="bg-gradient-to-br from-yellow-300 via-yellow to-yellow-600  px-6 py-5 ">
+          <div className="max-w-7xl mx-auto flex flex-col items-center md:flex-row md:gap-8">
+            <div className="text-center md:text-left md:basis-2/3 ">
               <span className="bg-accent text-white px-3 py-1 rounded-full text-xs font-bold uppercase"> {t('AppHeroBadge')}</span>
               <h1 className=" text-4xl md:text-6xl font-extrabold mt-4 leading-tight text-blue-950"> {t('AppHeroTitle1')} <br className="hidden md:inline" />
                 <span className="">{t('AppHeroTitle2')}</span></h1>
@@ -26,7 +31,7 @@ export default function ApplicationPage() {
               height={500}
               fetchPriority="high"
               decoding="async"
-              className="max-w-[300px] md:w-1/2 h-auto"
+              className="max-w-lg justify-self-end h-auto md:basis-1/3 "
             />
           </div>
         </section>
@@ -89,27 +94,27 @@ export default function ApplicationPage() {
             {
                 title: t('AppStep1Title'),
                 desc: t('AppStep1Desc'),
-                image: HeroImage,
+                image: homeScreen,
             },
             {
                 title: t('AppStep2Title'),
                 desc: t('AppStep2Desc'),
-                image: HeroImage,
+                image: searchScreen,
             },
             {
                 title: t('AppStep3Title'),
                 desc: t('AppStep3Desc'),
-                image: HeroImage,
+                image: travelScreen,
             },
             {
                 title: t('AppStep4Title'),
                 desc: t('AppStep4Desc'),
-                image: HeroImage,
+                image: orderScreen,
             },
             {
                 title: t('AppStep5Title'),
                 desc: t('AppStep5Desc'),
-                image: HeroImage,
+                image: ariveScreen,
             },
         ];
 
@@ -125,8 +130,8 @@ export default function ApplicationPage() {
                                     className={`p-7 flex flex-col md:flex-row ${i % 2 === 1 ? 'md:flex-row-reverse' : ''} items-center gap-6 md:gap-16 justify-center`}
                                 >
                                  <div className="text max-w-[400px]">
-                                    <h3 className="text-lg font-bold text-gray-900 dark:text-slate-100 mb-2 ">{s.title}</h3>
-                                    <p className="text-gray-600 dark:text-slate-300 text-sm leading-relaxed">{s.desc}</p>
+                                    <h3 className="text-2xl font-bold text-gray-900 dark:text-slate-100 mb-2 ">{s.title}</h3>
+                                    <p className="text-gray-600 dark:text-slate-300 text-base leading-relaxed">{s.desc}</p>
                                 </div>
                                     <div className="image max-w-[350px] h-auto flex items-center justify-center">
                                         <img

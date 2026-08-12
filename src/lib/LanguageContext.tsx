@@ -361,9 +361,9 @@ export const translations = {
   companyAddressLabel: { bg: 'Седалище и адрес на управление:', en: 'Registered Address:' },
 
   // Application Page
-  AppHeroBadge: { bg: 'Бърза поръчка 24/7', en: 'Quick Order 24/7' },
-  AppHeroTitle1: { bg: 'Мобилно приложение за такси', en: 'Mobile Taxi App' },
-  AppHeroTitle2: { bg: 'Всеки момент, всяка дума', en: 'Any Moment, Any Word' },
+  AppHeroBadge: { bg: 'Винаги с теб', en: 'Always with You' },
+  AppHeroTitle1: { bg: 'Мобилно приложение', en: 'Mobile App' },
+  AppHeroTitle2: { bg: 'ЕН Такси Стара Загора', en: 'N Taxi Stara Zagora' },
   AppHeroDesc: { bg: 'Най-бързият начин да получите такси в Стара Загора', en: 'The fastest way to get a taxi in Stara Zagora' },
 
   App1Title: { bg: 'Бърза поръчка', en: 'Quick Order' },
@@ -379,16 +379,16 @@ export const translations = {
   App4Desc: { bg: 'Нашите шофьори са професионални и обучени', en: 'Our drivers are professional and trained' },
 
   AppHowItWorkTitle: { bg: 'Как работи?', en: 'How It Works?' },
-  AppStep1Title: { bg: 'Изтеглете приложението', en: 'Download the App' },
-  AppStep1Desc: { bg: 'Наличен за iOS и Android устройства', en: 'Available for iOS and Android devices' },
-  AppStep2Title: { bg: 'Регистрирайте се или влезте', en: 'Sign Up or Log In' },
-  AppStep2Desc: { bg: 'Създайте профил или използвайте съществуващ', en: 'Create a profile or use an existing one' },
-  AppStep3Title: { bg: 'Поръчайте такси с няколко клика', en: 'Order a Taxi in a Few Clicks' },
-  AppStep3Desc: { bg: 'Изберете местоположение и потвърдете поръчката', en: 'Select your location and confirm the order' },
-  AppStep4Title: { bg: 'Проследете пристигането на автомобила', en: 'Track Your Taxi Arrival' },
-  AppStep4Desc: { bg: 'Вижте движението на автомобила в реално време', en: 'See the vehicle movement in real time' },
-  AppStep5Title: { bg: 'Плащане и оценка на услугата', en: 'Payment and Service Rating' },
-  AppStep5Desc: { bg: 'Платете с карта или в брой и оценете шофьора', en: 'Pay by card or cash and rate your driver' }
+  AppStep1Title: { bg: '1. Начален екран', en: '1. Home Screen' },
+  AppStep1Desc: { bg: 'При стартиране на приложението виждате точното си местоположение, адреса на който се намирате и 5 най-близки автомобила. Ако желате може да преместите маркера със задържане и преместване на картата.', en: 'When you launch the app, you see your exact location, the address you are at, and the 5 closest taxis. If you wish, you can move the marker by holding and dragging the map.' },
+  AppStep2Title: { bg: '2. Дестинация', en: '2. Destination' },
+  AppStep2Desc: { bg: 'Въведете крайна цел на вашето пътуване за да получите приблизителна стойност и време за пристигане. Имате възможност да изберете от историята на вашите търсения, да посочите директно от картата или да изберете "без посока".', en: 'Enter your destination to get an estimated cost and arrival time. You can choose from your search history, specify directly on the map, or select "no direction".' },
+  AppStep3Title: { bg: '3. Обобщение на поръчката', en: '3. Order Summary' },
+  AppStep3Desc: { bg: 'На този екран виждате подробности за поръчката си, от къде, до къде ще пътувате, разстояние, време и приблизителна стойност. Тук избирате вида на автомобила "Стандарт", "Комфорт" или "Комби", избирате начина по който желате да платите (в брой или с карта). Също така имате поле "Уточнение", там може да въведете допълнителни инструкции за шофьора (Например: "С малко коте", "С детска количка", "Вход: Г", "С два куфара" и др.). С натискане на бутона "Поръчай" приложението изпраща вашата поръчка към системата.', en: 'On this screen you see details about your order, from where, to where you will travel, distance, time and an estimated cost. Here you choose the type of vehicle "Standard", "Comfort" or "Combi", choose the payment method (cash or card). Also, you have a field "Details", there you can enter additional instructions for the driver (For example: "With a little cat", "With a child car seat", "Entrance: G", "With two suitcases" and others). When you press the "Order" button, the app sends your order to the system.' },
+  AppStep4Title: { bg: '4. Потвърждение на поръчката', en: '4. Order Confirmation' },
+  AppStep4Desc: { bg: 'След като системата намери най-близкия автомобил който отговаря на вашите изисквания и шофьора приеме вашата поръкъчка. Получавате известие за потвърждение на поръчката както и информация за шофьора и автомобила. В реално време можете да проследите движението на автомобила.', en: 'After the system finds the closest vehicle that meets your requirements and the driver accepts your order, you will receive a confirmation notification along with information about the driver and the vehicle. You can track the vehicle\'s movement in real time.' },
+  AppStep5Title: { bg: '5. На адрес.', en: '5. At Your Destination' },
+  AppStep5Desc: { bg: 'При достигане на вашия адрес ситемата ви изпраща нотификация ,че таксито е пристигнало. Нашите шофьори изчакват до 5 минути ( ако мястото позволява ), след като се качите и шофьора отбележи, че тръгвате, поръчката се приема за изпълнена. След края на пътуването можете да оцените услугата като влезете в менюто не приложението ,секция "История", там можете да се свържете с шофьора в случай на нужда ( например забравени вещи ).', en: 'On reaching your destination, the system will send you a notification that your taxi has arrived. Our drivers will wait for up to 5 minutes (if the location allows), after you get in and the driver indicates you are departing, the order is considered completed. After the trip, you can rate the service by entering the app menu, section "History", where you can also contact the driver in case of need (for example, forgotten items).' }
 } as const;
 
 export type TranslationKey = keyof typeof translations;

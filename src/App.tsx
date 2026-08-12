@@ -38,8 +38,8 @@ function PageLoader() {
 function Hero() {
   const { t } = useLanguage();
   return (
-    <section className="bg-gradient-to-br from-yellow-300 via-yellow to-yellow-600  flex items-center justify-center px-6 py-5 ">
-      <div className="max-w-7xl mx-auto flex items-center justify-between flex-col md:flex-row md:gap-8">
+    <section className="bg-gradient-to-br from-yellow-300 via-yellow to-yellow-600  flex items-center justify-center p-4 ">
+      <div className="max-w-7xl mx-auto flex items-center justify-between flex-col md:flex-row md:gap-8 ">
         <div className="max-w-xl text-center md:text-left">
           <span className="bg-accent text-white px-3 py-1 rounded-full text-xs font-bold uppercase"> {t('heroBadge')}</span>
           <h1 className="text-4xl md:text-6xl font-extrabold mt-4 leading-tight text-blue-950"> {t('heroTitle1')} <br className="hidden md:inline" />
@@ -83,7 +83,7 @@ function Services() {
 
   return (
     <section className="py-8 md:py-12">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end justify-between px-6 py-5 gap-4">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end justify-between px-4 py-5 gap-4">
         <div>
           <span className="bg-accent dark:bg-slate-800 text-white dark:text-accent border border-emerald-200 dark:border-slate-700 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">{t('servicesBadge')}</span>
           <h2 className="text-3xl md:text-4xl font-extrabold mt-2 text-gray-900 dark:text-slate-100 tracking-tight">{t('servicesTitle')}</h2>
@@ -97,7 +97,7 @@ function Services() {
         </Link>
       </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6 py-5">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4 py-5">
         {services.map((s, i) => (
           <div
             key={i}
@@ -145,8 +145,8 @@ function AboutUs() {
   ];
 
   return (
-    <section className="flex items-center justify-center px-6 py-5 ">
-      <div className="max-w-7xl grid grid-col md:grid-cols-2 gap-8 md:justify-center items-center">
+    <section className="flex items-center justify-center px-4 py-5 ">
+      <div className="max-w-7xl grid grid-col md:grid-cols-2 gap-8 md:justify-center px-4 items-center">
         <div className="max-auto text-center md:text-left ">
           <span className="bg-accent dark:bg-slate-800 text-white dark:text-accent border border-emerald-200 dark:border-slate-700 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">{t('aboutBadge')}</span>
           <h2 className="text-3xl md:text-3xl font-extrabold mt-4 leading-tight">{t('aboutTitle')}</h2>
@@ -190,7 +190,7 @@ function Pricing() {
   const price = tariff === 'daily' ? dayPrice : nightPrice;
 
   return (
-    <section className="flex items-center justify-center px-6 py-5 my-4  transition-colors duration-200">
+    <section className="flex items-center justify-center p-4  transition-colors duration-200">
       <div className="max-w-7xl mx-auto">
         <span className="bg-accent dark:bg-slate-800 text-white dark:text-accent border border-emerald-200 dark:border-slate-700 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">{t('pricingBadge')}</span>
         <h2 className="text-3xl md:text-4xl font-extrabold mt-2 mb-8 text-gray-900 dark:text-slate-100 tracking-tight">{t('pricingTitle')}</h2>
@@ -285,7 +285,7 @@ function WhyChooseUs() {
   ];
 
   return (
-    <section className="p-8 md:p-12 my-6">
+    <section className="p-4">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12">
           <span className="bg-accent dark:bg-slate-800 text-white dark:text-accent border border-emerald-200 dark:border-slate-700 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
