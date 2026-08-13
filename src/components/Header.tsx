@@ -38,7 +38,6 @@ export default function Header() {
           <NavLink to="/application" className={navLinkClass}>{t('navApp')}</NavLink>
           <NavLink to="/services" className={navLinkClass}>{t('navServices')}</NavLink>
           <NavLink to="/contact" className={navLinkClass}>{t('navContact')}</NavLink>
-          
         </nav>
 
         <div className="flex items-center gap-2.5">
@@ -104,10 +103,9 @@ export default function Header() {
             <NavLink to="/" onClick={() => setIsOpen(false)} className={mobileNavLinkClass}>{t('navHome')}</NavLink>
             <NavLink to="/application" onClick={() => setIsOpen(false)} className={mobileNavLinkClass}>{t('navApp')}</NavLink>
             <NavLink to="/services" onClick={() => setIsOpen(false)} className={mobileNavLinkClass}>{t('navServices')}</NavLink>
-            <a href="#about" onClick={() => setIsOpen(false)} className="px-4 py-3 rounded-xl font-semibold text-base text-gray-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-800 transition-all duration-200">{t('navAbout')}</a>
-            <a href="#contact" onClick={() => setIsOpen(false)} className="px-4 py-3 rounded-xl font-semibold text-base text-gray-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-800 transition-all duration-200">{t('navContact')}</a>
-            
-            <a href="#contact" onClick={() => setIsOpen(false)} className="mt-2 w-full text-center bg-blue-900 dark:bg-amber-500 dark:text-slate-950 text-white py-3 rounded-xl font-bold shadow-md active:scale-98 transition-all duration-200">
+            <NavLink to="/contact" onClick={() => setIsOpen(false)} className={mobileNavLinkClass}>{t('navContact')}</NavLink>
+                        
+            <a href={import.meta.env.VITE_PHONE_LINK} onClick={() => setIsOpen(false)} className="mt-2 w-full text-center bg-blue-900 dark:bg-amber-500 dark:text-slate-950 text-white py-3 rounded-xl font-bold shadow-md active:scale-98 transition-all duration-200">
               {t('navOrderNow')}
             </a>
           </nav>

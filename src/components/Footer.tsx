@@ -51,8 +51,7 @@ export default function Footer() {
                     <ul className="space-y-4 text-gray-600 dark:text-slate-300">
                         <li><Link to="/application" className="flex items-center gap-2 hover:text-blue-900 dark:hover:text-blue-700">{t('navApp')} <span className="bg-teal-500 text-white text-[10px] px-2 py-0.5 rounded-full">{t('footerNewBadge')}</span></Link></li>
                         <li><Link to="/services" className="hover:text-blue-900 dark:hover:text-blue-700">{t('navServices')}</Link></li>
-                        <li><a href="#about" className="hover:text-blue-900 dark:hover:text-blue-700">{t('navAbout')}</a></li>
-                        <li><a href="#contact" className="hover:text-blue-900 dark:hover:text-blue-700">{t('navContact')}</a></li>
+                        <li><Link to="/contact" className="hover:text-blue-900 dark:hover:text-blue-700">{t('navContact')}</Link></li>
                     </ul>
                 </div>
 

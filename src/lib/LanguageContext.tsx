@@ -253,8 +253,8 @@ export const translations = {
   },
   srvP6Title: { bg: 'Сигурност и фискална изрядност', bgBadge: '100% Гаранция', en: 'Safety & Fiscal Compliance', enBadge: '100% Guaranteed' },
   srvP6Desc: { 
-    bg: 'Всички автомобили са оборудвани с изправни касови апарати, GPS проследяване, застраховка за пътниците и POS терминали за банкови карти.',
-    en: 'All vehicles carry certified fiscal meters, GPS tracking, passenger insurance, and card payment terminals.'
+    bg: 'Всички автомобили са оборудвани с изправни касови апарати, GPS проследяване, застраховка за пътниците и голям брой автомобили с POS терминали за банкови карти.',
+    en: 'All vehicles are equipped with functioning fiscal meters, GPS tracking, and passenger insurance, and a large number of them feature POS terminals for bank cards.'
   },
   orderNowCall: { bg: 'Поръчай сега на 042 6106', en: 'Order now at 042 6106' },
 

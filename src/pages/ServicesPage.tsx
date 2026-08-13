@@ -1,4 +1,4 @@
-import { ShieldCheck, MapPin, Building2, Car, Clock, Award } from 'lucide-react';
+import { ShieldCheck, MapPin, Building2, Road, Clock, PartyPopper } from 'lucide-react';
 import SEO from '../components/SEO';
 import { useLanguage } from '../lib/LanguageContext';
 import { TARIFFS } from '../lib/pricing';
@@ -30,13 +30,13 @@ export default function ServicesPage() {
         { 
             title: t('srvP1Title'), 
             desc: t('srvP1Desc'), 
-            icon: Car,
+            icon: MapPin,
             badge: lang === 'bg' ? '24/7 Денонощно' : '24/7 Available'
         },
         { 
             title: t('srvP2Title'), 
             desc: t('srvP2Desc'), 
-            icon: MapPin,
+            icon: Road,
             badge: lang === 'bg' ? 'Фиксирани цени' : 'Fixed Rates'
         },
         { 
@@ -54,7 +54,7 @@ export default function ServicesPage() {
         { 
             title: t('srvP5Title'), 
             desc: t('srvP5Desc'), 
-            icon: Award,
+            icon: PartyPopper,
             badge: lang === 'bg' ? 'Висока класа' : 'Premium'
         },
         { 

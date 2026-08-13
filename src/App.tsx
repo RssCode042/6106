@@ -38,8 +38,8 @@ function PageLoader() {
 function Hero() {
   const { t } = useLanguage();
   return (
-    <section className="bg-gradient-to-br from-yellow-300 via-yellow to-yellow-600  flex items-center justify-center p-4 ">
-      <div className="max-w-7xl mx-auto flex items-center justify-between flex-col md:flex-row md:gap-8 ">
+    <section className="bg-gradient-to-br from-yellow-300 via-yellow to-yellow-600  flex items-center justify-center py-8 md:py-12">
+      <div className="max-w-7xl p-4 mx-auto flex items-center justify-between flex-col md:flex-row md:gap-8 ">
         <div className="max-w-xl text-center md:text-left">
           <span className="bg-accent text-white px-3 py-1 rounded-full text-xs font-bold uppercase"> {t('heroBadge')}</span>
           <h1 className="text-4xl md:text-6xl font-extrabold mt-4 leading-tight text-blue-950"> {t('heroTitle1')} <br className="hidden md:inline" />
@@ -83,7 +83,7 @@ function Services() {
 
   return (
     <section className="py-8 md:py-12">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end justify-between px-4 py-5 gap-4">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end justify-between p-4 gap-4">
         <div>
           <span className="bg-accent dark:bg-slate-800 text-white dark:text-accent border border-emerald-200 dark:border-slate-700 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">{t('servicesBadge')}</span>
           <h2 className="text-3xl md:text-4xl font-extrabold mt-2 text-gray-900 dark:text-slate-100 tracking-tight">{t('servicesTitle')}</h2>
@@ -97,7 +97,7 @@ function Services() {
         </Link>
       </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4 py-5">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 p-4">
         {services.map((s, i) => (
           <div
             key={i}
@@ -145,8 +145,8 @@ function AboutUs() {
   ];
 
   return (
-    <section className="flex items-center justify-center px-4 py-5 ">
-      <div className="max-w-7xl grid grid-col md:grid-cols-2 gap-8 md:justify-center px-4 items-center">
+    <section className="flex items-center justify-center py-8 md:py-12 ">
+      <div className="max-w-7xl grid grid-col md:grid-cols-2 gap-8 md:justify-center p-4 items-center">
         <div className="max-auto text-center md:text-left ">
           <span className="bg-accent dark:bg-slate-800 text-white dark:text-accent border border-emerald-200 dark:border-slate-700 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">{t('aboutBadge')}</span>
           <h2 className="text-3xl md:text-3xl font-extrabold mt-4 leading-tight">{t('aboutTitle')}</h2>
@@ -155,8 +155,8 @@ function AboutUs() {
             {services.map(({ title, desc }) => (
               <div key={title} className="card flex flex-col gap-2 font-bold items-center ">
 
-                <h3 className="text-4xl text-brand pt-2">{title}</h3>
-                <p>{desc}</p>
+                <h3 className="text-2xl md:text-3xl text-brand pt-2">{title}</h3>
+                <p className="text-brand text-sm md:text-base">{desc}</p>
               </div>
 
 
@@ -190,29 +190,38 @@ function Pricing() {
   const price = tariff === 'daily' ? dayPrice : nightPrice;
 
   return (
-    <section className="flex items-center justify-center p-4  transition-colors duration-200">
-      <div className="max-w-7xl mx-auto">
+    <section className="flex items-center justify-center py-8 md:py-12  transition-colors duration-200">
+      <div className="max-w-7xl mx-auto p-4">
         <span className="bg-accent dark:bg-slate-800 text-white dark:text-accent border border-emerald-200 dark:border-slate-700 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">{t('pricingBadge')}</span>
         <h2 className="text-3xl md:text-4xl font-extrabold mt-2 mb-8 text-gray-900 dark:text-slate-100 tracking-tight">{t('pricingTitle')}</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 p-6 rounded-lg shadow-sm">
             <h3 className="text-xl md:text-2xl font-bold mb-6 text-gray-900 dark:text-slate-100">{t('pricingTableTitle')}</h3>
-            <div className="space-y-4">
+            <div className="overflow-x-auto rounded-xl border border-gray-200 dark:border-slate-700 shadow-sm">
+            <table className="w-full text-left text-sm text-gray-700 dark:text-slate-300">
+                            <thead className="bg-gray-50 dark:bg-slate-800/80 text-gray-900 dark:text-slate-100">
+                                <tr>
+                                    <th className="px-4 py-4 font-bold border-b border-gray-200 dark:border-slate-700 w-1/3"></th>
+                                    <th className="px-4 py-4 font-bold border-b border-gray-200 dark:border-slate-700 text-center w-1/3">{t('dayTariff')}</th>
+                                    <th className="px-4 py-4 font-bold border-b border-gray-200 dark:border-slate-700 text-center w-1/3">{t('nightTariff')}</th>
+                                </tr>
+                            </thead>
+                            <tbody className="divide-y divide-gray-200 dark:divide-slate-700 bg-white dark:bg-slate-900">
               {[
                 { label: t('pricePerKm'), daily: import.meta.env.VITE_DAY_PRICE_PER_KM_EUR + " EUR" , night: import.meta.env.VITE_NIGHT_PRICE_PER_KM_EUR + " EUR" },
                 { label: t('initialFee'), daily: import.meta.env.VITE_DAY_INITIAL_FEE_EUR + " EUR", night: import.meta.env.VITE_NIGHT_INITIAL_FEE_EUR + " EUR" },
                 { label: t('callFee'), daily: t('free'), night: t('free') },
                 { label: t('waitTime'), daily: import.meta.env.VITE_DAY_WAIT_FEE_EUR + " EUR", night: import.meta.env.VITE_NIGHT_WAIT_FEE_EUR + " EUR" },
               ].map((item, idx) => (
-                <div key={idx} className="border-b border-gray-100 dark:border-slate-800 pb-4">
-                  <div className="font-semibold text-gray-700 dark:text-slate-200 mb-2">{item.label}</div>
-                  <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div className="bg-gray-50 dark:bg-slate-800 dark:text-slate-200 p-2.5 rounded-lg flex justify-between border border-gray-100 dark:border-slate-700">{t('dayTariff')}: <span className="font-bold text-gray-900 dark:text-amber-400">{item.daily}</span></div>
-                    <div className="bg-gray-50 flex justify-between dark:bg-slate-800 dark:text-slate-200 p-2.5 rounded-lg border border-gray-100 dark:border-slate-700">{t('nightTariff')}: <span className="font-bold text-gray-900 dark:text-amber-400">{item.night}</span></div>
-                  </div>
-                </div>
-              ))}
+                                    <tr key={idx} className="hover:bg-gray-50 dark:hover:bg-slate-800/50 transition-colors">
+                                        <td className="px-4 py-4 font-semibold text-gray-900 dark:text-slate-200">{item.label}</td>
+                                        <td className="px-4 py-4 font-bold text-blue-900 dark:text-yellow text-center whitespace-nowrap">{item.daily}</td>
+                                        <td className="px-4 py-4 font-bold text-blue-900 dark:text-yellow text-center whitespace-nowrap">{item.night}</td>
+                                    </tr>
+                                ))}
+            </tbody>
+                        </table>
             </div>
             <p className="text-xs text-sky-700 dark:text-sky-600 mt-6 bg-blue-50 dark:bg-slate-800/80 border border-blue-100 dark:border-slate-700 p-4 rounded-lg">{t('tariffNotice')}</p>
           </div>
@@ -285,8 +294,8 @@ function WhyChooseUs() {
   ];
 
   return (
-    <section className="p-4">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-8 md:py-12">
+      <div className="max-w-7xl mx-auto p-4">
         <div className="mb-12">
           <span className="bg-accent dark:bg-slate-800 text-white dark:text-accent border border-emerald-200 dark:border-slate-700 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
             {t('whyBadge')}
@@ -322,8 +331,8 @@ function CallToAction() {
   const { t, lang } = useLanguage();
 
   return (
-    <section className="px-4 my-16">
-      <div className="mb-12 max-w-7xl mx-auto ">
+    <section className="py-8 md:py-12">
+      <div className="mb-12 max-w-7xl mx-auto p-4">
         <span className="bg-accent dark:bg-slate-800 text-white dark:text-accent border border-emerald-200 dark:border-slate-700 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
           {t('ctaBadge')}
         </span>
@@ -331,7 +340,7 @@ function CallToAction() {
           {t('ctaTitle')}
         </h2>
       </div>
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
 
         <div className="items-stretch">
           {/* LEFT COLUMN: Invitation to Download the Mobile Application */}

@@ -24,7 +24,10 @@ export default defineConfig({
         '/',
         '/services',
         '/contact',
-        '/download-app'
+        '/download-app',
+        '/application',
+        '/privacy-policy',
+        '/terms-of-service'
       ]
     })
   ],
