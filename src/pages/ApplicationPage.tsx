@@ -1,11 +1,11 @@
 import { useLanguage } from "../lib/LanguageContext";
 import AppStore from '../components/AppStore';
-import homeScreen from '../assets/homeScreen.png';
-import searchScreen from '../assets/searchScreen.png';
-import HeroImage from '../assets/ContactHero.png';
-import travelScreen from '../assets/travelScreen.png';
-import orderScreen from '../assets/orderScreen.png';
-import ariveScreen from '../assets/ariveScreen.png';
+import homeScreen from '../assets/homeScreen.webp';
+import searchScreen from '../assets/searchScreen.webp';
+import HeroImage from '../assets/ContactHero.webp';
+import travelScreen from '../assets/travelScreen.webp';
+import orderScreen from '../assets/orderScreen.webp';
+import ariveScreen from '../assets/ariveScreen.webp';
 import { Clock, Euro, Shield, Leaf, Smartphone, CheckCircle2, PhoneCall, Phone, ArrowRight } from "lucide-react";
 
 

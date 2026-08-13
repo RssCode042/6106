@@ -7,7 +7,7 @@ import { LanguageProvider, useLanguage } from "./lib/LanguageContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { ThemeProvider } from "./lib/ThemeContext";
-import HeroImage from "./assets/HeroImage.png";
+import HeroImage from "./assets/HeroImage.webp";
 import AboutImage from "./assets/AboutUs.png";
 import AppStore from "./components/AppStore";
 import ApplicationPage from "./pages/ApplicationPage";
