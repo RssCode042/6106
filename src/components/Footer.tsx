@@ -19,7 +19,7 @@ export default function Footer() {
         <footer id="contact" className="bg-white dark:bg-slate-900/90 pt-16  border-t border-gray-100 dark:border-slate-800 scroll-mt-20 transition-colors duration-200">
             <div className="max-w-7xl mx-auto px-6 py-2 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 ">
                 <div className="col-span-1 md:col-span-1">
-                    <img src={theme === 'dark' ? logoDark : logo} alt="N6106 Logo" width="178" height="48" className="h-8 w-auto mb-6 filter dark:brightness-110" loading="lazy" decoding="async" />
+                    <img src={theme === 'dark' ? logoDark : logo} alt="Taxi 6106" width="178" height="48" className="h-8 w-auto mb-6 filter dark:brightness-110" loading="lazy" decoding="async" />
                     <p className="text-gray-600 dark:text-slate-300 mb-6">{t('footerDesc')}</p>
                     <div className="flex gap-4">
                         <Link to={import.meta.env.VITE_FACEBOOK_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center">
