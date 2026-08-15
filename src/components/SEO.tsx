@@ -146,6 +146,8 @@ export default function SEO({
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={ogImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:locale" content="bg_BG" />
 
       {/* Twitter Cards */}
