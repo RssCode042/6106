@@ -3,6 +3,9 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 import Sitemap from 'vite-plugin-sitemap'
+
+import { VitePWA } from 'vite-plugin-pwa';
+
 // @ts-ignore
 
 
@@ -29,8 +32,52 @@ export default defineConfig({
         '/privacy-policy',
         '/terms-of-service'
       ]
-    })
+    }),
+    VitePWA({
+        registerType: 'autoUpdate',
+        includeAssets: ['robots.txt', 'sitemap.xml', 'icon.svg', 'assets/*'],
+        manifest: {
+          name: 'Ен Такси Стара Загора (042 6106)',
+          short_name: 'Ен Такси 6106',
+          description: 'Бърза и сигурна поръчка на такси в Стара Загора 24/7. Телефон 042 6106.',
+          theme_color: '#2E3192',
+          background_color: '#ffffff',
+          display: 'standalone',
+          orientation: 'portrait',
+          start_url: '/',
+          scope: '/',
+          lang: 'bg',
+          icons: [
+            {
+              src: '/icon.svg',
+              sizes: '192x192 512x512',
+              type: 'image/svg+xml',
+              purpose: 'any maskable'
+            }
+          ]
+        },
+        workbox: {
+          globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,json}'],
+          runtimeCaching: [
+            {
+              urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
+              handler: 'CacheFirst',
+              options: {
+                cacheName: 'google-fonts-cache',
+                expiration: {
+                  maxEntries: 10,
+                  maxAgeSeconds: 60 * 60 * 24 * 365
+                },
+                cacheableResponse: {
+                  statuses: [0, 200]
+                }
+              }
+            }
+          ]
+        }
+      })
   ],
+  
   build: {
     rollupOptions: {
       output: {

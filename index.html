@@ -2,9 +2,12 @@
 <html lang="bg">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#2E3192" />
-
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Ен Такси 6106" />
     <!-- Preconnect to Google Fonts (avoids extra RTT) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,15 +19,44 @@
       media="print"
       onload="this.media='all'"
     />
-    <meta 
-    name="description" 
-    content="Официален сайт на Ен Такси Стара Загора 6106. Бърза поръчка на такси на 042 6106 или през мобилно приложение."
-    data-rh="true" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ен Такси Стара Загора | 042 6106</title>
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/icon.svg" />
+    <meta name="description" content="Ен Такси Стара Загора - бързи, сигурни и надеждни градски и междуградски превози. Поръчайте такси бързо с нашето мобилно приложение." />
+    <meta name="keywords" content="такси, Стара Загора, превози, таксиметрови услуги, Ен Такси" />
+    <title>Ен Такси Стара Загора | Бързи и надеждни таксиметрови услуги</title>
+    <!-- Google Tag Manager & Consent Mode v2 Base Script -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'wait_for_update': 500
+      });
+      gtag('js', new Date());
+    </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Static content for bots and LLMs that do not execute JavaScript -->
+      <div style="display: none;">
+        <h1>Ен Такси Стара Загора</h1>
+        <p>Бързи, сигурни и надеждни таксиметрови услуги в Стара Загора и региона. Денонощно обслужване (24/7).</p>
+        <h2>Контакти</h2>
+        <p>Телефон за поръчки: 042 6106, +359 42 6106</p>
+        <h2>Услуги</h2>
+        <ul>
+          <li>Градски таксиметрови превози в Стара Загора</li>
+          <li>Междуградски трансфери до всяка точка на България</li>
+          <li>Летищни трансфери (София, Пловдив, Бургас, Варна)</li>
+        </ul>
+        <h2>Тарифи</h2>
+        <p>Дневна тарифа: 0.85 EUR/км. Нощна тарифа: 0.95 EUR/км. Такса повикване: Безплатно.</p>
+        <p>Свалете нашето безплатно мобилно приложение за iOS и Android за лесна поръчка и GPS следене.</p>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
