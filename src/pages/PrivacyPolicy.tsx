@@ -1,6 +1,6 @@
 
-import { Shield, Database, Lock, Eye, UserCheck } from 'lucide-react';
-import SEO from '../components/SEO';
+import { Shield, Database, Lock, Eye, UserCheck, Smartphone } from 'lucide-react';
+
 import { useLanguage } from '../lib/LanguageContext';
 
 export default function PrivacyPolicy() {
@@ -11,11 +11,7 @@ export default function PrivacyPolicy() {
 
     return (
         <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 pb-16">
-            <SEO 
-                title={lang === 'en' ? "Privacy Policy | En Taxi Stara Zagora" : "Политика за поверителност | Ен Такси Стара Загора"}
-                description={lang === 'en' ? "Privacy and cookie policy for the En Taxi Stara Zagora website." : "Политика за поверителност и бисквитки на уебсайта на Ен Такси Стара Загора."}
-                canonicalUrl={`${import.meta.env.VITE_DOMAIN}/privacy`}
-            />
+
 
             <div className="bg-blue-900 dark:bg-slate-900 text-white rounded-lg p-10 md:p-16 mb-12 text-center relative overflow-hidden shadow-xl mt-4">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
@@ -78,7 +74,41 @@ export default function PrivacyPolicy() {
                             : 'Освен това уебсайтът може да използва Google Analytics за събиране на анонимни данни за използването (прегледани страници, продължителност на сесията и др.) с цел подобряване на работата на сайта. Тези данни не Ви идентифицират лично.'}
                     </p>
                 </section>
-
+                {/* За мобилното приложение */}
+                
+                <section className="bg-white dark:bg-slate-900 p-8 rounded-lg shadow-sm border border-gray-100 dark:border-slate-800">
+                    <div className="flex items-center gap-3 mb-6">
+                        <Smartphone className="w-6 h-6 text-blue-900 dark:text-amber-400" />
+                        <h2 className="text-2xl font-bold text-gray-900 dark:text-slate-100">
+                            {lang === 'en' ? 'Data we may collect from mobile app' : 'Данни, които събираме чрез приложението'}
+                        </h2>
+                    </div>
+                    <p className="leading-relaxed mb-4">
+                        {lang === 'en'
+                            ? 'When you use our mobile application, we collect the following categories of data:'
+                            : 'Когато използвате нашето мобилно приложение, ние събираме следните категории данни:'}
+                    </p>
+                    <ul className="list-disc list-inside space-y-2 pl-2">
+                        {lang === 'en' ? (
+                            <>
+                                <li><strong>Location Data (GPS):</strong> To dispatch the nearest vehicle and allow you to track your ride, the app requires access to your location.</li>
+                                <li><strong>Contact Information:</strong> Phone number for account creation and communication with the driver.</li>
+                                <li><strong>Device Information:</strong> Phone model and OS version to optimize app performance.</li>
+                            </>
+                        ) : (
+                            <>
+                                <li><strong>Данни за местоположение (GPS):</strong> За да Ви изпратим най-близкия автомобил и да проследявате пътуването си, приложението изисква достъп до Вашето местоположение .</li>
+                                <li><strong>Контактна информация:</strong> Телефонен номер за създаване на профил и комуникация с шофьора.</li>
+                                <li><strong>Информация за устройството:</strong> Модел на телефона и версия на операционната система за оптимизиране на работата на приложението.</li>
+                            </>
+                        )}
+                    </ul>
+                    {/* <p className="mt-4 leading-relaxed">
+                        {lang === 'en'
+                            ? 'Additionally, our website may use Google Analytics to collect anonymous usage data (page views, session duration, etc.) to improve website performance. This data does not personally identify you.'
+                            : 'Освен това уебсайтът може да използва Google Analytics за събиране на анонимни данни за използването (прегледани страници, продължителност на сесията и др.) с цел подобряване на работата на сайта. Тези данни не Ви идентифицират лично.'}
+                    </p> */}
+                </section>          
                 {/* За какво използваме данните */}
                 <section className="bg-white dark:bg-slate-900 p-8 rounded-lg shadow-sm border border-gray-100 dark:border-slate-800">
                     <div className="flex items-center gap-3 mb-6">
@@ -92,6 +122,8 @@ export default function PrivacyPolicy() {
                             <>
                                 <li>To respond to your inquiry or request</li>
                                 <li>To provide the requested taxi service information</li>
+                                <li>To provide taxi dispatch services and connect you with drivers.</li>
+                                <li>To improve security and customer support.</li>
                                 <li>To improve the quality of our services</li>
                                 <li>We do not sell your data to third parties</li>
                             </>
@@ -99,6 +131,8 @@ export default function PrivacyPolicy() {
                             <>
                                 <li>За отговор на Вашето запитване или заявка</li>
                                 <li>За предоставяне на исканата информация за таксиметровите ни услуги</li>
+                                <li>За предоставяне на таксиметрови услуги и свързване с шофьори.</li>
+                                <li>За подобряване на сигурността и обслужването на клиентите.</li>
                                 <li>За подобряване качеството на нашите услуги</li>
                                 <li>Не продаваме данните Ви на трети страни</li>
                             </>
@@ -191,13 +225,13 @@ export default function PrivacyPolicy() {
                 </section>
 
                 {/* Мобилно приложение */}
-                <section className="bg-white dark:bg-slate-900 p-8 rounded-lg shadow-sm border border-gray-100 dark:border-slate-800">
+                {/* <section className="bg-white dark:bg-slate-900 p-8 rounded-lg shadow-sm border border-gray-100 dark:border-slate-800">
                     <div className="flex items-center gap-3 mb-6">
                         <Lock className="w-6 h-6 text-blue-900 dark:text-amber-400" />
                         <h2 className="text-2xl font-bold text-gray-900 dark:text-slate-100">{t('appDisclaimerTitle')}</h2>
                     </div>
                     <p className="leading-relaxed">{t('appDisclaimerText')}</p>
-                </section>
+                </section> */}
 
                 <p className="text-sm text-gray-500 dark:text-slate-500 text-center">
                     {lang === 'en' ? 'Last updated: August 2026' : 'Последна актуализация: Август 2026 г.'}

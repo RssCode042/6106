@@ -12,7 +12,7 @@ export interface SEOProps {
 
 const DEFAULT_TITLE = 'Ен Такси Стара Загора (N6106) | Бързи и сигурни таксиметрови услуги 24/7';
 const DEFAULT_DESCRIPTION = 'Поръчайте такси в Стара Загора бързо и лесно на 042 6106 или през мобилното ни приложение. Комфортни автомобили, изгодни тарифи и 24/7 обслужване.';
-const DEFAULT_KEYWORDS = 'такси Стара Загора, поръчка на такси 042 6106, Ен Такси, таксиметрови услуги, градски превоз, трансфер летище София, трансфер Бургас, евтино такси Стара Загора, такси приложение';
+const DEFAULT_KEYWORDS = 'такси Стара Загора, поръчка на такси 042 6106, Ен Такси 6106, таксиметрови услуги, градски превоз, трансфер летище София, трансфер Бургас, евтино такси Стара Загора, такси приложение';
 // Always read from env so staging builds and production never mix URLs
 const SITE_URL = (import.meta.env.VITE_DOMAIN as string | undefined)?.replace(/;$/, '') || 'https://6106.bg';
 // Use a raster image for og:image — SVG is not supported by Facebook / Twitter
@@ -26,7 +26,7 @@ export const mainTaxiSchema = {
       '@type': 'TaxiService',
       '@id': `${SITE_URL}/services`,
       'name': 'Ен Такси Стара Загора',
-      'alternateName': ['N6106 Taxi', 'En Taxi Stara Zagora', 'Такси 6106'],
+      'alternateName': ['Taxi 6106', 'En Taxi Stara Zagora', 'Такси 6106'],
       'url': SITE_URL,
       'telephone': '+359426106',
       'image': DEFAULT_OG_IMAGE,

@@ -100,7 +100,7 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <h3 className="text-sm font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-1">{t('contactEmailLabel')}</h3>
-                                        <a href="mailto:info@entaxi.bg" className="text-lg font-semibold text-gray-900 dark:text-slate-100 hover:text-blue-900 dark:hover:text-amber-400 transition-colors">
+                                        <a href="mailto:office@6106.bg" className="text-lg font-semibold text-gray-900 dark:text-slate-100 hover:text-blue-900 dark:hover:text-amber-400 transition-colors">
                                             {t('contactEmailVal')}
                                         </a>
                                     </div>

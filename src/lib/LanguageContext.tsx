@@ -281,7 +281,7 @@ export const translations = {
   contactPhoneLabel: { bg: 'Телефон за поръчки', en: 'Phone for Orders' },
   contactPhoneVal: { bg: '042 6106', en: '042 6106' },
   contactEmailLabel: { bg: 'Имейл', en: 'Email' },
-  contactEmailVal: { bg: 'info@entaxi.bg', en: 'info@entaxi.bg' },
+  contactEmailVal: { bg: 'office@6106.bg', en: 'office@6106.bg' },
 
   // Contact Form
   formNameLabel: { bg: 'Име', en: 'Name' },

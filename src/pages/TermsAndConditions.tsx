@@ -1,6 +1,6 @@
 
 import { FileText, Building2, AlertCircle, Scale } from 'lucide-react';
-import SEO from '../components/SEO';
+
 import { useLanguage } from '../lib/LanguageContext';
 
 export default function TermsAndConditions() {
@@ -14,11 +14,7 @@ export default function TermsAndConditions() {
 
     return (
         <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 pb-16">
-            <SEO 
-                title={lang === 'en' ? "Terms & Conditions | En Taxi Stara Zagora" : "Общи условия | Ен Такси Стара Загора"}
-                description={lang === 'en' ? "Terms and conditions for using the En Taxi Stara Zagora website and services." : "Общи условия за ползване на уебсайта и услугите на Ен Такси Стара Загора."}
-                canonicalUrl={`${import.meta.env.VITE_DOMAIN}/terms`}
-            />
+            
 
             <div className="bg-blue-900 dark:bg-slate-900 text-white rounded-lg p-10 md:p-16 mb-12 text-center relative overflow-hidden shadow-xl mt-4">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
