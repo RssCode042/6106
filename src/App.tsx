@@ -458,8 +458,8 @@ function Home() {
   const { lang } = useLanguage();
 
   const seoTitle = lang === 'en'
-    ? "En Taxi Stara Zagora 6106 | Taxi Services"
-    : "Ен Такси Стара Загора 6106 | Таксиметрови услуги.";
+    ? "En Taxi Stara Zagora 6106 | Taxi Services 24/7"
+    : "Ен Такси Стара Загора 6106 | Таксиметрови услуги 24/7.";
 
   const seoDesc = lang === 'en'
     ? "Official website of En Taxi Stara Zagora 6106. Quick taxi request at 042 6106 or via mobile app. Airport transfers, and 24/7 service."
