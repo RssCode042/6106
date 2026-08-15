@@ -3,13 +3,10 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 import Sitemap from 'vite-plugin-sitemap'
-
-import { VitePWA } from 'vite-plugin-pwa';
+import { VitePWA } from 'vite-plugin-pwa'
 
 // @ts-ignore
 
-
-// https://vite.dev/config/
 export default defineConfig({
   base: '/',
   plugins: [
@@ -18,8 +15,34 @@ export default defineConfig({
     ViteImageOptimizer({
       png: { quality: 80 },
       jpeg: { quality: 80 },
-      webp: { quality: 80 },
+      jpg: { quality: 80 },
+      webp: { quality: 80 , lossless: true},
       avif: { quality: 70 },
+      svg: {
+    multipass: true,
+    plugins: [
+      {
+        name: 'preset-default',
+        params: {
+          overrides: {
+            cleanupNumericValues: false,
+            cleanupIds: {
+              minify: false,
+              remove: false,
+            },
+            convertPathData: false,
+          },
+        },
+      },
+      'sortAttrs',
+      {
+        name: 'addAttributesToSVGElement',
+        params: {
+          attributes: [{ xmlns: 'http://www.w3.org/2000/svg' }],
+        },
+      },
+    ],
+  },
     }),
     Sitemap({
       hostname: 'https://6106.bg',
@@ -29,13 +52,13 @@ export default defineConfig({
         '/contact',
         '/download-app',
         '/application',
-        '/privacy-policy',
-        '/terms-of-service'
+        '/privacy',
+        '/terms'
       ]
     }),
     VitePWA({
         registerType: 'autoUpdate',
-        includeAssets: ['robots.txt', 'sitemap.xml', 'icon.svg', 'assets/*'],
+        includeAssets: ['robots.txt', 'sitemap.xml', 'favicon.svg', 'assets/*'],
         manifest: {
           name: 'Ен Такси Стара Загора (042 6106)',
           short_name: 'Ен Такси 6106',
@@ -93,6 +116,25 @@ export default defineConfig({
           }
         }
       }
-    }
-  }
+    },
+    // Добавени оптимизации
+    minify: 'esbuild',
+    sourcemap: process.env.NODE_ENV === 'development' ? true : false,
+    cssCodeSplit: true,
+    chunkSizeWarningLimit: 500,
+    // Компресия не е поддържана в текущия тип Vite build options.
+  },
+  
+  // Добавени оптимизации за production
+  optimizeDeps: {
+    noDiscovery: true,
+  },
+  
+  
+  // CSS оптимизации
+  css: {
+    modules: {
+      localsConvention: 'camelCaseOnly',
+    },
+  },
 })
