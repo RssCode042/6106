@@ -59,7 +59,7 @@ server.listen(0, async () => {
     });
     
     // The main routes to prerender
-    const routes = ['/', '/application', '/services', '/contact', '/privacy', '/terms'];
+    const routes = ['/', '/application', '/services', '/contact', '/download-app','/privacy', '/terms'];
     
     for (const route of routes) {
       console.log(`Prerendering ${route}...`);
