@@ -66,7 +66,7 @@ server.listen(0, async () => {
       const page = await browser.newPage();
       
       // Navigate and wait until network is mostly idle
-      await page.goto(`http://6106.bg:${port}${route}`, { waitUntil: 'networkidle0' });
+      await page.goto(`http://localhost:${port}${route}`, { waitUntil: 'networkidle0' });
       
       // Wait extra time for React Suspense/lazy loading to complete
       await new Promise(resolve => setTimeout(resolve, 2500));
