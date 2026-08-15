@@ -2,10 +2,10 @@ import { MapPin, Phone, Mail  } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../lib/LanguageContext';
 import { useTheme } from '../lib/ThemeContext';
-import  Facebook  from '../assets/Facebook.svg';
-import  TikTok  from '../assets/TikTok.svg';
-import  YouTube  from '../assets/YouTube.svg';
-import  Instagram  from '../assets/Instagram.svg';
+import Facebook from '../assets/Facebook.svg';
+import TikTok from '../assets/TikTok.svg';
+import YouTube from '../assets/YouTube.svg';
+import Instagram from '../assets/Instagram.svg';
 import logo from '../assets/logo.svg';
 import logoDark from '../assets/logoDark.svg';
 
@@ -15,6 +15,13 @@ export default function Footer() {
     const { t } = useLanguage();
     const { theme } = useTheme();
 
+    const socialLinks = [
+        { name: 'facebook', url: import.meta.env.VITE_FACEBOOK_LINK, icon: Facebook, alt: 'Facebook' },
+        { name: 'tiktok', url: import.meta.env.VITE_TIKTOK_LINK, icon: TikTok, alt: 'TikTok' },
+        { name: 'youtube', url: import.meta.env.VITE_YOUTUBE_LINK, icon: YouTube, alt: 'YouTube' },
+        { name: 'instagram', url: import.meta.env.VITE_INSTAGRAM_LINK, icon: Instagram, alt: 'Instagram' },
+    ].filter(social => social.url);
+
     return (
         <footer id="contact" className="bg-white dark:bg-slate-900/90 pt-16  border-t border-gray-100 dark:border-slate-800 scroll-mt-20 transition-colors duration-200">
             <div className="max-w-7xl mx-auto px-6 py-2 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 ">
@@ -22,18 +29,24 @@ export default function Footer() {
                     <img src={theme === 'dark' ? logoDark : logo} alt="Taxi 6106" width="178" height="48" className="h-8 w-auto mb-6 filter dark:brightness-110" loading="lazy" decoding="async" />
                     <p className="text-gray-600 dark:text-slate-300 mb-6">{t('footerDesc')}</p>
                     <div className="flex gap-4">
-                        <Link to={import.meta.env.VITE_FACEBOOK_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center">
-                            <img src={Facebook} alt="Facebook" width="24" height="24" className="h-6 w-auto inline text-brand stroke-yellow" />
-                        </Link>
-                        <Link to={import.meta.env.VITE_TIKTOK_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center">
-                            <img src={TikTok} alt="TikTok" width="24" height="24" className="h-6  w-auto inline" />
-                        </Link>
-                        <Link to={import.meta.env.VITE_YOUTUBE_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center">
-                            <img src={YouTube} alt="YouTube" width="24" height="24" className="h-6 w-auto inline" />
-                        </Link>
-                        <Link to={import.meta.env.VITE_INSTAGRAM_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center">
-                            <img src={Instagram} alt="Instagram" width="24" height="24" className="h-6 w-auto inline" />
-                        </Link>
+                        {socialLinks.map(social => (
+                            <Link 
+                                key={social.name}
+                                to={social.url} 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="flex items-center hover:opacity-80 transition-opacity"
+                                aria-label={social.alt}
+                            >
+                                <img 
+                                    src={social.icon} 
+                                    alt={social.alt} 
+                                    width="24" 
+                                    height="24" 
+                                    className="h-6 w-auto inline" 
+                                />
+                            </Link>
+                        ))}
                     </div>
                 </div>
 

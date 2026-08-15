@@ -127,9 +127,16 @@ export default defineConfig({
   
   // Добавени оптимизации за production
   optimizeDeps: {
-    noDiscovery: true,
+    include: [
+      'react',
+      'react-dom',
+      'react-router-dom',
+      'react-helmet-async',
+      'react-fast-compare',
+      'lucide-react',
+      'qrcode.react'
+    ],
   },
-  
   
   // CSS оптимизации
   css: {
