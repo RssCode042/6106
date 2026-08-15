@@ -88,7 +88,7 @@ export default function AppStore() {
               </div>
               <div className="">
                 <h4 className="text-left text-blue-700 font-bold pt-2">{lang === 'en' ? "For the iOS users." : "За притежателите на iOS"}</h4>
-                <p className="text-left text-sm py-4 text-gray-700"> {lang === 'en' ? "While the iOS app is in development, you can use our web-based application." : "Докато приложението за iOS е в процес на разработка може да използвате уеб базираното приложение."}</p>
+                <p className="text-left text-sm py-4 text-gray-700"> {lang === 'en' ? "While the iOS app is in development, you can use our web-based application." : "Докато приложението за iOS е в процес на разработка, може да използвате уеб базираното приложение."}</p>
                 <div className="flex justify-end">
                 <a href={onlineLink} target="_blank" rel="noopener noreferrer" className="w-fit self-center text-center bg-gray-100 hover:bg-gray-200 border border-gray-400 text-gray-700 hover:text-blue-700 font-semibold py-2 px-4 rounded-lg">
                {lang === 'en' ? "Order Online" : "Поръчай онлайн"}

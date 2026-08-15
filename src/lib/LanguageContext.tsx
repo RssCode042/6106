@@ -50,7 +50,7 @@ export const translations = {
   aboutBadge: { bg: 'За Нас', en: 'About Us' },
   aboutTitle: { bg: '30 години традиция и сигурност по улиците на Стара Загора', en: '30 years of tradition and safety on the streets of Stara Zagora' },
   aboutDesc: { 
-    bg: 'Основана в началото на 90-те години, Ен Такси започна своя път с една мисия – да предложи на жителите и гостите на Стара Загора сигурен, точен и достъпен транспорт. Днес, повече от три десетилетия по-късно, ние сме утвърден лидер с модерен автопарк и екип от професионалисти. За нас всяко пътуване не е просто дестинация, а отговорност към твоето доверие.',
+    bg: 'Основана в началото на 90-те години, Ен Такси започна своя път с една мисия – да предложи на жителите и гостите на Стара Загора сигурен, точен и достъпен транспорт. Днес, повече от три десетилетия по-късно, ние сме утвърден лидер с модерен автопарк и екип от професионалисти. За нас всяко пътуване не е просто дестинация, а отговорност към вашето доверие.',
     en: 'Founded in the early 1990s, N Taxi began its journey with a single mission – to offer the residents and visitors of Stara Zagora safe, punctual, and affordable transportation. Today, more than three decades later, we are an established leader with a modern fleet and a team of professionals. For us, every ride is not just a destination, but a responsibility to your trust.'
   },
   statYearsVal: { bg: '30+', en: '30+' },
@@ -114,7 +114,7 @@ export const translations = {
   },
   why4Title: { bg: 'Комфортен и Екологичен автопарк', en: 'Comfortable & Eco Fleet' },
   why4Desc: { 
-    bg: 'Модерни хибридни и гориво-ефективни автомобили за максимален комфорт и по-чист въздух в Стара Загора.',
+    bg: 'Модерни хибридни и горивоефективни автомобили за максимален комфорт и по-чист въздух в Стара Загора.',
     en: 'Modern hybrid and fuel-efficient vehicles for maximum comfort and cleaner air in Stara Zagora.'
   },
   why5Title: { bg: 'Безконтактно плащане с карта', en: 'Contactless Card Payment' },
@@ -124,14 +124,14 @@ export const translations = {
   },
   why6Title: { bg: 'Мобилно приложение с карта', en: 'Mobile App with Live Map' },
   why6Desc: { 
-    bg: 'Следете местоположението на шофьора в реално време, запазвайте адреси и поръчвайте без да чакате на линия.',
+    bg: 'Следете местоположението на шофьора в реално време, запазвайте адреси и поръчвайте, без да чакате на линия.',
     en: 'Track your driver in real time, save favorite addresses, and order instantly without waiting.'
   },
   // Call To Action Section (After Why Choose Us)
   ctaAppBadge: { bg: 'Мобилно Приложение', en: 'Mobile Application' },
   ctaAppTitle: { bg: 'Поръчай такси с 2 клика на телефона си', en: 'Order a taxi in 2 clicks on your phone' },
   ctaAppDesc: { 
-    bg: 'Следете колата в реално време на картата, запазвайте любими адреси и поръчвайте без да чакате свързване с диспечер.', 
+    bg: 'Следете колата в реално време на картата, запазвайте любими адреси и поръчвайте, без да чакате свързване с диспечер.', 
     en: 'Track your taxi live on the map, save favorite locations, and order instantly without waiting for a dispatcher.' 
   },
   ctaAppFeat1: { bg: 'Реално време GPS проследяване на автомобила', en: 'Real-time GPS vehicle tracking' },
@@ -220,7 +220,7 @@ export const translations = {
   },
 
   // Services Page
-  srvPageBadge: { bg: 'Професионален транспорт с 30г. опит', en: 'Professional Transport with 30 Years Experience' },
+  srvPageBadge: { bg: 'Професионален транспорт с 30 г. опит', en: 'Professional Transport with 30 Years Experience' },
   srvPageTitle: { bg: 'Нашите Услуги', en: 'Our Services' },
   srvPageSubtitle: { 
     bg: 'Предлагаме пълен спектър от таксиметрови превози в град Стара Загора и междуградски трансфери из цяла България.',
@@ -238,17 +238,17 @@ export const translations = {
   },
   srvP3Title: { bg: 'Корпоративно обслужване на фирми', bgBadge: 'Фирмени фактури', en: 'Corporate & Business Rides', enBadge: 'Invoicing Available' },
   srvP3Desc: { 
-    bg: 'Специализирани договори за обслужване на ваши служители, гости, бизнес срещи и корпоративни събития. Възможност за безкешово плащане, подробни справки и месечни фактури.',
+    bg: 'Специализирани договори за обслужване на Вашите служители, гости, бизнес срещи и корпоративни събития. Възможност за безкешово плащане, подробни справки и месечни фактури.',
     en: 'Tailored contracts for employee travel, business guests, and corporate events with detailed reports and monthly invoicing.'
   },
   srvP4Title: { bg: 'Предварителни резервации за час', bgBadge: 'Точност до минута', en: 'Advance Scheduled Bookings', enBadge: 'Punctual Guarantee' },
   srvP4Desc: { 
-    bg: 'Планирайте вашия превоз предварително за ранен сутрешен полет, влак, автобус или медицински преглед без да се притеснявате за закъснения.',
-    en: 'Book your ride ahead of time for early morning flights, trains, or appointments without worrying about delays.'
+    bg: 'Планирайте вашия превоз предварително за ранен сутрешен полет, влак, автобус или медицински преглед, без да се притеснявате за закъснения.',
+    en: 'Book your ride ahead of time for early morning flights, trains, or appointments, without worrying about delays.'
   },
   srvP5Title: { bg: 'Транспорт за специални събития', bgBadge: 'Висока класа', en: 'Special Events Transportation', enBadge: 'Premium Comfort' },
   srvP5Desc: { 
-    bg: 'Превоз за сватби, абитуриентски балове, празници и частни партита. Комфортни и чисти автомобили за вас и вашите гости.',
+    bg: 'Превоз за сватби, абитуриентски балове, празници и частни партита. Комфортни и чисти автомобили за Вас и Вашите гости.',
     en: 'Transportation for weddings, graduations, holidays, and private celebrations in clean, comfortable vehicles.'
   },
   srvP6Title: { bg: 'Сигурност и фискална изрядност', bgBadge: '100% Гаранция', en: 'Safety & Fiscal Compliance', enBadge: '100% Guaranteed' },
@@ -295,11 +295,11 @@ export const translations = {
 
   // Footer
   footerDesc: { 
-    bg: 'Повече от 30 години доверие, сигурност и комфорт по пътищата на Стара Загора. Твоят лицензиран таксиметров партньор.',
+    bg: 'Повече от 30 години доверие, сигурност и комфорт по пътищата на Стара Загора. Вашият лицензиран таксиметров партньор.',
     en: 'Over 30 years of trust, safety, and comfort on the roads of Stara Zagora. Your licensed taxi partner.'
   },
   footerAddress: { 
-    bg: '"бул. Цар Симеон Велики 1 Проектанска Организация ет.2 офис №21, 6000 гр. Стара Загора"',
+    bg: 'бул. „Цар Симеон Велики“ 1, Проектантска организация, ет. 2, офис 21, 6000 гр. Стара Загора, България',
     en: '"1 Tsar Simeon Veliki Blvd, Floor 2, Office 21, 6000 Stara Zagora, Bulgaria"'
   },
   footerMenu: { bg: 'Меню', en: 'Menu' },
@@ -380,15 +380,15 @@ export const translations = {
 
   AppHowItWorkTitle: { bg: 'Как работи?', en: 'How It Works?' },
   AppStep1Title: { bg: '1. Начален екран', en: '1. Home Screen' },
-  AppStep1Desc: { bg: 'При стартиране на приложението виждате точното си местоположение, адреса на който се намирате и 5 най-близки автомобила. Ако желате може да преместите маркера със задържане и преместване на картата.', en: 'When you launch the app, you see your exact location, the address you are at, and the 5 closest taxis. If you wish, you can move the marker by holding and dragging the map.' },
+  AppStep1Desc: { bg: 'При стартиране на приложението виждате точното си местоположение, адреса, на който се намирате и 5 най-близки автомобила. Ако желате може да преместите маркера със задържане и преместване на картата.', en: 'When you launch the app, you see your exact location, the address you are at, and the 5 closest taxis. If you wish, you can move the marker by holding and dragging the map.' },
   AppStep2Title: { bg: '2. Дестинация', en: '2. Destination' },
-  AppStep2Desc: { bg: 'Въведете крайна цел на вашето пътуване за да получите приблизителна стойност и време за пристигане. Имате възможност да изберете от историята на вашите търсения, да посочите директно от картата или да изберете "без посока".', en: 'Enter your destination to get an estimated cost and arrival time. You can choose from your search history, specify directly on the map, or select "no direction".' },
+  AppStep2Desc: { bg: 'Въведете крайна цел на вашето пътуване, за да получите приблизителна стойност и време за пристигане. Имате възможност да изберете от историята на вашите търсения, да посочите директно от картата или да изберете "без посока".', en: 'Enter your destination, to get an estimated cost and arrival time. You can choose from your search history, specify directly on the map, or select "no direction".' },
   AppStep3Title: { bg: '3. Обобщение на поръчката', en: '3. Order Summary' },
-  AppStep3Desc: { bg: 'На този екран виждате подробности за поръчката си, от къде, до къде ще пътувате, разстояние, време и приблизителна стойност. Тук избирате вида на автомобила "Стандарт", "Комфорт" или "Комби", избирате начина по който желате да платите (в брой или с карта). Също така имате поле "Уточнение", там може да въведете допълнителни инструкции за шофьора (Например: "С малко коте", "С детска количка", "Вход: Г", "С два куфара" и др.). С натискане на бутона "Поръчай" приложението изпраща вашата поръчка към системата.', en: 'On this screen you see details about your order, from where, to where you will travel, distance, time and an estimated cost. Here you choose the type of vehicle "Standard", "Comfort" or "Combi", choose the payment method (cash or card). Also, you have a field "Details", there you can enter additional instructions for the driver (For example: "With a little cat", "With a child car seat", "Entrance: G", "With two suitcases" and others). When you press the "Order" button, the app sends your order to the system.' },
+  AppStep3Desc: { bg: 'На този екран виждате подробности за поръчката си, от къде, до къде ще пътувате, разстояние, време и приблизителна стойност. Тук избирате вида на автомобила "Стандарт", "Комфорт" или "Комби", избирате начина, по който желаете да платите (в брой или с карта). Също така имате поле "Уточнение", там може да въведете допълнителни инструкции за шофьора (Например: "С малко коте", "С детска количка", "Вход: Г", "С два куфара" и др.). С натискане на бутона "Поръчай" приложението изпраща вашата поръчка към системата.', en: 'On this screen you see details about your order, from where, to where you will travel, distance, time and an estimated cost. Here you choose the type of vehicle "Standard", "Comfort" or "Combi", choose the payment method (cash or card). Also, you have a field "Details", there you can enter additional instructions for the driver (For example: "With a little cat", "With a child car seat", "Entrance: G", "With two suitcases" and others). When you press the "Order" button, the app sends your order to the system.' },
   AppStep4Title: { bg: '4. Потвърждение на поръчката', en: '4. Order Confirmation' },
-  AppStep4Desc: { bg: 'След като системата намери най-близкия автомобил който отговаря на вашите изисквания и шофьора приеме вашата поръкъчка. Получавате известие за потвърждение на поръчката както и информация за шофьора и автомобила. В реално време можете да проследите движението на автомобила.', en: 'After the system finds the closest vehicle that meets your requirements and the driver accepts your order, you will receive a confirmation notification along with information about the driver and the vehicle. You can track the vehicle\'s movement in real time.' },
+  AppStep4Desc: { bg: 'След като системата намери най-близкия автомобил, който отговаря на вашите изисквания, и шофьорът приеме вашата поръкъчка. Получавате известие за потвърждение на поръчката както и информация за шофьора и автомобила. В реално време можете да проследите движението на автомобила.', en: 'After the system finds the closest vehicle, that meets your requirements, and the driver accepts your order, you will receive a confirmation notification along with information about the driver and the vehicle. You can track the vehicle\'s movement in real time.' },
   AppStep5Title: { bg: '5. На адрес.', en: '5. At Your Destination' },
-  AppStep5Desc: { bg: 'При достигане на вашия адрес ситемата ви изпраща нотификация ,че таксито е пристигнало. Нашите шофьори изчакват до 5 минути ( ако мястото позволява ), след като се качите и шофьора отбележи, че тръгвате, поръчката се приема за изпълнена. След края на пътуването можете да оцените услугата като влезете в менюто не приложението ,секция "История", там можете да се свържете с шофьора в случай на нужда ( например забравени вещи ).', en: 'On reaching your destination, the system will send you a notification that your taxi has arrived. Our drivers will wait for up to 5 minutes (if the location allows), after you get in and the driver indicates you are departing, the order is considered completed. After the trip, you can rate the service by entering the app menu, section "History", where you can also contact the driver in case of need (for example, forgotten items).' }
+  AppStep5Desc: { bg: 'При достигане на вашия адрес ситемата ви изпраща нотификация ,че таксито е пристигнало. Нашите шофьори изчакват до 5 минути (ако мястото позволява), след като се качите и шофьорът отбележи, че тръгвате, поръчката се приема за изпълнена. След края на пътуването можете да оцените услугата като влезете в менюто на приложението ,секция "История", там можете да се свържете с шофьора в случай на нужда (например забравени вещи).', en: 'On reaching your destination, the system will send you a notification that your taxi has arrived. Our drivers will wait for up to 5 minutes (if the location allows), after you get in and the driver indicates you are departing, the order is considered completed. After the trip, you can rate the service by entering the app menu, section "History", where you can also contact the driver in case of need (for example, forgotten items).' }
 } as const;
 
 export type TranslationKey = keyof typeof translations;
