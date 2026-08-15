@@ -24,7 +24,7 @@ export const mainTaxiSchema = {
   '@graph': [
     {
       '@type': 'TaxiService',
-      '@id': `${SITE_URL}/#taxiservice`,
+      '@id': `${SITE_URL}/services`,
       'name': 'Ен Такси Стара Загора',
       'alternateName': ['N6106 Taxi', 'En Taxi Stara Zagora', 'Такси 6106'],
       'url': SITE_URL,
@@ -97,7 +97,7 @@ export const mainTaxiSchema = {
     },
     {
       '@type': 'LocalBusiness',
-      '@id': `${SITE_URL}/#organization`,
+      '@id': `${SITE_URL}/contacts`,
       'name': 'Ен Такси Стара Загора',
       'url': SITE_URL,
       'telephone': '+359426106',
@@ -140,7 +140,7 @@ export default function SEO({
       <meta name="ICBM" content="42.4258, 25.6342" />
 
       {/* Open Graph Tags */}
-      <meta property="og:site_name" content="Ен Такси Стара Загора (N6106)" />
+      <meta property="og:site_name" content="Ен Такси Стара Загора 6106" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content={ogType} />

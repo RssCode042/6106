@@ -14,6 +14,7 @@ export default function PrivacyPolicy() {
             <SEO 
                 title={lang === 'en' ? "Privacy Policy | En Taxi Stara Zagora" : "Политика за поверителност | Ен Такси Стара Загора"}
                 description={lang === 'en' ? "Privacy and cookie policy for the En Taxi Stara Zagora website." : "Политика за поверителност и бисквитки на уебсайта на Ен Такси Стара Загора."}
+                canonicalUrl={`${import.meta.env.VITE_DOMAIN}/privacy`}
             />
 
             <div className="bg-blue-900 dark:bg-slate-900 text-white rounded-lg p-10 md:p-16 mb-12 text-center relative overflow-hidden shadow-xl mt-4">

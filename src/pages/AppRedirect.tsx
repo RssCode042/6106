@@ -81,7 +81,7 @@ export default function AppRedirectPage() {
       <SEO
         title={lang === 'en' ? 'Download En Taxi App | App Store & Google Play' : 'Свали Ен Такси Приложение | App Store & Google Play'}
         description={lang === 'en' ? 'Smart download page for En Taxi Stara Zagora mobile application for iOS and Android.' : 'Универсална страница за сваляне на мобилното приложение Ен Такси Стара Загора за iOS и Android.'}
-        canonicalUrl={qrRedirectUrl}
+        canonicalUrl={`${import.meta.env.VITE_DOMAIN}/download-app`}
       />
 
       <div className="inline-flex items-center gap-2 bg-blue-50 dark:bg-slate-800 text-blue-900 dark:text-amber-400 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6">

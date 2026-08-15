@@ -17,6 +17,7 @@ export default function TermsAndConditions() {
             <SEO 
                 title={lang === 'en' ? "Terms & Conditions | En Taxi Stara Zagora" : "Общи условия | Ен Такси Стара Загора"}
                 description={lang === 'en' ? "Terms and conditions for using the En Taxi Stara Zagora website and services." : "Общи условия за ползване на уебсайта и услугите на Ен Такси Стара Загора."}
+                canonicalUrl={`${import.meta.env.VITE_DOMAIN}/terms`}
             />
 
             <div className="bg-blue-900 dark:bg-slate-900 text-white rounded-lg p-10 md:p-16 mb-12 text-center relative overflow-hidden shadow-xl mt-4">

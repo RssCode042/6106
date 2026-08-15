@@ -1,4 +1,5 @@
 import { useLanguage } from "../lib/LanguageContext";
+import SEO from '../components/SEO';
 import AppStore from '../components/AppStore';
 import homeScreen from '../assets/homeScreen.webp';
 import searchScreen from '../assets/searchScreen.webp';
@@ -13,9 +14,14 @@ import { Clock, Euro, Shield, Leaf, Smartphone, CheckCircle2, PhoneCall, Phone, 
 export default function ApplicationPage() {
 
     function HeroApp() {
-      const { t } = useLanguage();
+      const { t, lang } = useLanguage();
       return (
         <section className="bg-gradient-to-br from-yellow-300 via-yellow to-yellow-600  px-6 py-5 ">
+         <SEO
+            title={lang === 'en' ? 'Download En Taxi App | App Store & Google Play' : 'Свали Ен Такси Приложение | App Store & Google Play'}
+            description={lang === 'en' ? 'Mobile application for En Taxi Stara Zagora for iOS and Android.' : 'Мобилното приложение на Ен Такси Стара Загора за iOS и Android.'}
+            canonicalUrl={`${import.meta.env.VITE_DOMAIN}/application`}
+          />
           <div className="max-w-7xl mx-auto flex flex-col items-center md:flex-row md:gap-8">
             <div className="text-center md:text-left md:basis-2/3 ">
               <span className="bg-accent text-white px-3 py-1 rounded-full text-xs font-bold uppercase"> {t('AppHeroBadge')}</span>
