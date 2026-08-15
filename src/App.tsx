@@ -466,7 +466,7 @@ function Home() {
     : "Официален сайт на Ен Такси Стара Загора 6106. Бърза поръчка на такси на 042 6106 или през мобилно приложение. Трансфери до летища и 24/7 обслужване.";
 
   return (
-    <>
+    <main>
       <SEO
         title={seoTitle}
         description={seoDesc}
@@ -482,7 +482,7 @@ function Home() {
         <WhyChooseUs />
         <CallToAction />
       </Suspense>
-    </>
+    </main>
   );
 }
 
