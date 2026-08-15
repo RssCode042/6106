@@ -458,12 +458,12 @@ function Home() {
   const { lang } = useLanguage();
 
   const seoTitle = lang === 'en'
-    ? "En Taxi Stara Zagora 6106 | Fast and Reliable Taxi Services"
-    : "Ен Такси Стара Загора 6106 | Бързи и надеждни таксиметрови услуги.";
+    ? "En Taxi Stara Zagora 6106 | Taxi Services"
+    : "Ен Такси Стара Загора 6106 | Таксиметрови услуги.";
 
   const seoDesc = lang === 'en'
-    ? "Official website of En Taxi Stara Zagora 6106. Quick taxi request at 042 6106 or via mobile app. Day and night rates, airport transfers, and 24/7 service."
-    : "Официален сайт на Ен Такси Стара Загора 6106. Бърза поръчка на такси на 042 6106 или през мобилно приложение. Дневна и нощна тарифа, трансфери до летища и 24/7 обслужване.";
+    ? "Official website of En Taxi Stara Zagora 6106. Quick taxi request at 042 6106 or via mobile app. Airport transfers, and 24/7 service."
+    : "Официален сайт на Ен Такси Стара Загора 6106. Бърза поръчка на такси на 042 6106 или през мобилно приложение. Трансфери до летища и 24/7 обслужване.";
 
   return (
     <>
