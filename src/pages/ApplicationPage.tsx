@@ -7,7 +7,7 @@ import HeroImage from '../assets/ContactHero.webp';
 import travelScreen from '../assets/travelScreen.webp';
 import orderScreen from '../assets/orderScreen.webp';
 import ariveScreen from '../assets/ariveScreen.webp';
-import { Clock, Euro, Shield, Leaf, Smartphone, CheckCircle2, PhoneCall, Phone, ArrowRight } from "lucide-react";
+import { Clock, Euro, Gauge, ReceiptText, Smartphone, CheckCircle2, PhoneCall, Phone, ArrowRight } from "lucide-react";
 
 
 
@@ -51,7 +51,7 @@ export default function ApplicationPage() {
     {
       title: t('App1Title'),
       desc: t('App1Desc'),
-      icon: Shield
+      icon: Gauge
     },
     {
       title: t('App2Title'),
@@ -66,7 +66,7 @@ export default function ApplicationPage() {
     {
       title: t('App4Title'),
       desc: t('App4Desc'),
-      icon: Leaf
+      icon: ReceiptText
     }
   ];
   

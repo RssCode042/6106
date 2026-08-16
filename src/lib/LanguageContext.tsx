@@ -114,13 +114,13 @@ export const translations = {
   },
   why4Title: { bg: 'Комфортен и Екологичен автопарк', en: 'Comfortable & Eco Fleet' },
   why4Desc: { 
-    bg: 'Модерни хибридни и горивоефективни автомобили за максимален комфорт и по-чист въздух в Стара Загора.',
-    en: 'Modern hybrid and fuel-efficient vehicles for maximum comfort and cleaner air in Stara Zagora.'
+    bg: 'Разполагаме с богат автопарк, хибридни, електрически и горивоефективни автомобили за по-чиста Стара Загора.',
+    en: 'We have an extensive fleet, including hybrid, electric, and fuel-efficient vehicles, for a cleaner Stara Zagora.'
   },
   why5Title: { bg: 'Безконтактно плащане с карта', en: 'Contactless Card Payment' },
   why5Desc: { 
-    bg: 'Всички коли разполагат с POS терминали за лесно плащане с Visa, Mastercard, Apple Pay или Google Pay.',
-    en: 'All vehicles feature POS terminals for effortless payments via Visa, Mastercard, Apple Pay, or Google Pay.'
+    bg: 'Голям брой от нашите автомобили разполагат с POS терминали за лесно плащане с Visa, Mastercard, Apple Pay или Google Pay.',
+    en: 'A large number of our vehicles are equipped with POS terminals for easy payment via Visa, Mastercard, Apple Pay, or Google Pay.'
   },
   why6Title: { bg: 'Мобилно приложение с карта', en: 'Mobile App with Live Map' },
   why6Desc: { 
@@ -364,19 +364,19 @@ export const translations = {
   AppHeroBadge: { bg: 'Винаги с теб', en: 'Always with You' },
   AppHeroTitle1: { bg: 'Мобилно приложение', en: 'Mobile App' },
   AppHeroTitle2: { bg: 'ЕН Такси Стара Загора', en: 'N Taxi Stara Zagora' },
-  AppHeroDesc: { bg: 'Най-бързият начин да получите такси в Стара Загора', en: 'The fastest way to get a taxi in Stara Zagora' },
+  AppHeroDesc: { bg: 'Най-бързият начин да поръчате такси в Стара Загора. Само с няколко клика , виждате автомобила в реално време, виждате приблизителна стойност на пътуването.', en: 'The fastest way to order a taxi in Stara Zagora. With just a few clicks, you can see the vehicle in real-time and view the estimated cost of the trip.' },
 
   App1Title: { bg: 'Бърза поръчка', en: 'Quick Order' },
-  App1Desc: { bg: 'Поръчайте такси във веднага, когато ви е нужно', en: 'Order a taxi immediately when you need it' },
+  App1Desc: { bg: 'Поръчайте такси бързо и лесно, когато и където ви е нужно. Без изчакване на свободна линия, без уточнения на точен адрес. Само с няколко клика.', en: 'Order a taxi quickly and easily, whenever and wherever you need it. No waiting for an available line, no need to specify an exact address. Just a few clicks.' },
 
-  App2Title: { bg: '24/7 Денонощно обслужване', en: '24/7 Round-the-Clock Service' },
-  App2Desc: { bg: 'Ние сме налични всеки ден, във всяко време', en: 'We are available every day, at any time' },
+  App2Title: { bg: 'Денонощно обслужване', en: 'Round-the-Clock Service' },
+  App2Desc: { bg: 'Ние сме налични всеки ден, във всяко време. Без почивен ден, денонощно, приложението и нашите автомобили са на Ваше расположение. ', en: 'We are available every day, at any time. Without days off, around the clock—the app and our vehicles are at your disposal.' },
 
-  App3Title: { bg: 'Изгодни тарифи', en: 'Affordable Rates' },
-  App3Desc: { bg: 'Получавайте такси по изгодни цени', en: 'Get taxis at affordable prices' },
+  App3Title: { bg: 'Плащайте удобно.', en: 'Pay conveniently.' },
+  App3Desc: { bg: 'Избирате по какъв начин да заплатите пътуването си. Разполагаме с автомобили с пос терминал, от приложението избирате дали ще платите в брой или банкова карта.', en: 'You choose how to pay for your trip. We have vehicles equipped with POS terminals, and you can select whether to pay in cash or by bank card via the app.' },
 
-  App4Title: { bg: 'Сигурност и комфорт', en: 'Safety and Comfort' },
-  App4Desc: { bg: 'Нашите шофьори са професионални и обучени', en: 'Our drivers are professional and trained' },
+  App4Title: { bg: 'Информация', en: 'Informacion' },
+  App4Desc: { bg: 'Получавате пълна информация за пътуването, време за пътуване, разстояние и приблизителна стойност. Имате история на пътуванията си.', en: 'You receive full trip details, including travel time, distance, and estimated cost. You also have a history of your trips.' },
 
   AppHowItWorkTitle: { bg: 'Как работи?', en: 'How It Works?' },
   AppStep1Title: { bg: '1. Начален екран', en: '1. Home Screen' },
