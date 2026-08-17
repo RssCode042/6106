@@ -83,7 +83,7 @@ export default function ServicesPage() {
                 schema={servicesSchema}
             />
 
-            <section className=" mb-16 w-7xl mx-auto">
+            <section className=" mb-16 max-w-7xl mx-auto">
                 <div className="inline-flex bg-accent dark:bg-slate-800 text-white dark:text-accent border border-emerald-200 dark:border-slate-700 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider gap-2">
                     <ShieldCheck className="w-4 h-4 text-white dark:text-accent" />
                     <span>{t('srvPageBadge')}</span>
@@ -91,7 +91,7 @@ export default function ServicesPage() {
                 <h1 className="text-4xl md:text-5xl font-black text-blue-900 dark:text-white mb-6 leading-tight">
                     {t('srvPageTitle')}
                 </h1>
-                <p className="text-lg text-gray-700 dark:text-slate-300 leading-relaxed">
+                <p className="text-lg text-gray-700 dark:text-slate-300  leading-relaxed">
                     {t('srvPageSubtitle')}
                 </p>
             </section>
