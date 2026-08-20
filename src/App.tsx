@@ -6,6 +6,7 @@ import AnalyticsTracker from "./components/AnalyticsTracker";
 import { LanguageProvider, useLanguage } from "./lib/LanguageContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import FAQSection from "./components/FAQSection";
 import { ThemeProvider } from "./lib/ThemeContext";
 import HeroImage from "./assets/HeroImage.webp";
 import AboutImage from "./assets/AboutUs.png";
@@ -36,20 +37,34 @@ function PageLoader() {
 
 
 function Hero() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   return (
     <section className="bg-gradient-to-br from-yellow-300 via-yellow to-yellow-600  flex items-center justify-center py-8 md:py-12">
       <div className="max-w-7xl p-4 mx-auto flex items-center justify-between flex-col md:flex-row md:gap-8 ">
-        <div className="max-w-xl text-center md:text-left">
+        <div className="max-w-fit text-center md:text-left">
           <span className="bg-accent text-white px-3 py-1 rounded-full text-xs font-bold uppercase"> {t('heroBadge')}</span>
-          <h1 className="text-4xl md:text-6xl font-extrabold mt-4 leading-tight text-blue-950"> {t('heroTitle1')} <br className="hidden md:inline" />
+          <h1 className="text-4xl md:text-5xl font-extrabold mt-4 leading-tight text-blue-950"> {t('heroTitle1')} <br className="hidden md:inline" />
             <span className="">{t('heroTitle2')}</span></h1>
-          <p className="mt-6 text-lg md:text-xl text-blue-950">{t('heroDesc')}</p>
+          <p className="mt-6 text-lg md:text-xl text-blue-950">
+            {lang === 'bg' ? (
+              <>
+                Търсите надеждно <strong>такси в Стара Загора</strong>? <strong>Ен Такси 6106</strong> осигурява{' '}
+                <strong>денонощни таксиметрови услуги</strong>, <strong>бърз трансфер до летища</strong> и
+                удобна поръчка на такси през мобилно приложение или на телефон <strong>042 6106</strong>.
+              </>
+            ) : (
+              <>
+                Looking for a reliable taxi in Stara Zagora? <strong>En Taxi 6106</strong> provides{' '}
+                <strong>24/7 taxi services</strong>, <strong>fast airport transfers</strong>, and convenient
+                booking via a mobile app or by calling <strong>042 6106</strong>.
+              </>
+            )}
+          </p>
           <AppStore />
         </div>
         <img
           src={HeroImage}
-          alt="Ен Такси мобилно приложение"
+          alt="Поръчка на такси Стара Загора през приложението на Ен Такси 6106"
           width={650}
           height={500}
           fetchPriority="high"
@@ -62,7 +77,7 @@ function Hero() {
 }
 
 function Services() {
-  const { t } = useLanguage();
+  const { t ,lang} = useLanguage();
   const services = [
     {
       title: t('srv1Title'),
@@ -111,11 +126,21 @@ function Services() {
               <p className="text-gray-600 dark:text-slate-300 text-base leading-relaxed">{s.desc}</p>
             </div>
 
-            <Link
-              to="/services"
-              className="mt-6 inline-flex items-center gap-2 text-xs font-bold text-blue-900 dark:text-yellow hover:underline pt-4 border-t border-gray-100 dark:border-slate-800"
-            >
-              <span>{t('learnMore')}</span>
+              <Link
+                to="/services"
+                className="mt-6 inline-flex items-center gap-2 text-xs font-bold text-blue-900 dark:text-yellow hover:underline pt-4 border-t border-gray-100 dark:border-slate-800"
+              >
+                <span>
+                  {lang === 'bg' ? (
+                <>
+                  Детайли за такси услуги в Стара Загора.
+                </>
+              ) : (
+                <>
+                  Details on taxi services in Stara Zagora.
+                </>
+              )}
+              </span>
               <span>→</span>
             </Link>
           </div>
@@ -166,7 +191,7 @@ function AboutUs() {
         <div className="relative mt-8 md:mt-0 md:items-right">
           <img
             src={AboutImage}
-            alt="Ен Такси автопарк - повече от 350 автомобила"
+            alt="Таксиметрова компания Ен Такси Стара Загора - автопарк"
             width={600}
             height={500}
             loading="lazy"
@@ -458,12 +483,12 @@ function Home() {
   const { lang } = useLanguage();
 
   const seoTitle = lang === 'en'
-    ? "En Taxi Stara Zagora 6106 | Taxi Services 24/7"
-    : "Ен Такси Стара Загора 6106 | Таксиметрови услуги 24/7.";
+    ? "Taxi Stara Zagora 6106 | En Taxi 24-hour taxi services"
+    : "Такси Стара Загора 6106 | Денонощни таксиметрови услуги Ен Такси";
 
   const seoDesc = lang === 'en'
-    ? "Official website of En Taxi Stara Zagora 6106. Quick taxi request at 042 6106 or via mobile app. Airport transfers, and 24/7 service."
-    : "Официален сайт на Ен Такси Стара Загора 6106. Бърза поръчка на такси на 042 6106 или през мобилно приложение. Трансфери до летища и 24/7 обслужване.";
+    ? "Order a taxi in Stara Zagora by calling 042 6106 or via the mobile app. Fast arrival, low rates, transfers, and 24/7 service.."
+    : "Поръчай такси в Стара Загора на бърз телефон 042 6106 или през мобилното приложение. Бързо пристигане, евтини тарифи, трансфери и 24/7 обслужване.";
 
   return (
     <main>
@@ -481,6 +506,7 @@ function Home() {
         <Pricing />
         <WhyChooseUs />
         <CallToAction />
+        <FAQSection />
       </Suspense>
     </main>
   );

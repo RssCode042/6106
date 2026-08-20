@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Shield, CheckCircle2, Send, CheckCircle } from 'lucide-react';
 import SEO from '../components/SEO';
 import { useLanguage } from '../lib/LanguageContext';
+import FAQSection from "../components/FAQSection";
 
 
 
@@ -134,81 +135,7 @@ export default function ContactPage() {
 
                     {/* Contact Form Section */}
                     <div className="bg-white dark:bg-slate-900 rounded-lg shadow-md border border-gray-100 dark:border-slate-800 p-8 h-full flex flex-col">
-                        <h2 className="text-2xl font-bold text-gray-900 dark:text-slate-100 mb-6">{lang === 'en' ? 'Send an Inquiry' : 'Изпратете запитване'}</h2>
-                        
-                        {isSubmitted ? (
-                            <div className="flex-1 flex flex-col items-center justify-center text-center p-8 bg-emerald-50 dark:bg-emerald-950/30 rounded-lg border border-emerald-100 dark:border-emerald-900/50 animate-in fade-in zoom-in duration-300">
-                                <CheckCircle className="w-16 h-16 text-emerald-500 mb-4" />
-                                <h3 className="text-xl font-bold text-emerald-800 dark:text-emerald-400 mb-2">
-                                    {t('formSuccessMessage')}
-                                </h3>
-                                <p className="text-emerald-600 dark:text-emerald-500">
-                                    {lang === 'en' ? 'We will get back to you as soon as possible.' : 'Ще се свържем с Вас при първа възможност.'}
-                                </p>
-                            </div>
-                        ) : (
-                            <form onSubmit={handleSubmit} className="flex-1 flex flex-col space-y-5">
-                                <div>
-                                    <label htmlFor="name" className="block text-sm font-semibold text-gray-700 dark:text-slate-300 mb-1.5">
-                                        {t('formNameLabel')}
-                                    </label>
-                                    <input 
-                                        type="text" 
-                                        id="name" 
-                                        required
-                                        placeholder={t('formNamePlaceholder')}
-                                        className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none"
-                                    />
-                                </div>
-                                
-                                <div>
-                                    <label htmlFor="contact" className="block text-sm font-semibold text-gray-700 dark:text-slate-300 mb-1.5">
-                                        {t('formContactLabel')}
-                                    </label>
-                                    <input 
-                                        type="text" 
-                                        id="contact" 
-                                        required
-                                        placeholder={t('formContactPlaceholder')}
-                                        className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none"
-                                    />
-                                </div>
-                                
-                                <div className="flex-1">
-                                    <label htmlFor="message" className="block text-sm font-semibold text-gray-700 dark:text-slate-300 mb-1.5">
-                                        {t('formMessageLabel')}
-                                    </label>
-                                    <textarea 
-                                        id="message" 
-                                        required
-                                        rows={4}
-                                        placeholder={t('formMessagePlaceholder')}
-                                        className="w-full h-32 px-4 py-3 rounded-lg bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-gray-900 dark:text-slate-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all outline-none resize-none"
-                                    ></textarea>
-                                </div>
-                                
-                                
-                                <div className="flex items-start gap-3 mt-4 mb-2">
-                                    <input 
-                                        type="checkbox" 
-                                        id="privacy" 
-                                        required
-                                        className="mt-1 w-4 h-4 text-blue-900 bg-gray-50 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                                    />
-                                    <label htmlFor="privacy" className="text-sm text-gray-600 dark:text-slate-400 leading-tight">
-                                        {t('privacyCheckbox')}
-                                    </label>
-                                </div>
-
-                                <button 
-                                    type="submit"
-                                    className="w-full bg-blue-900 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-500 text-white font-bold py-3.5 rounded-lg flex items-center justify-center gap-2 transition-all duration-200 shadow-md active:scale-[0.98]"
-                                >
-                                    <Send className="w-4 h-4" />
-                                    {t('formSubmitButton')}
-                                </button>
-                            </form>
-                        )}
+                       
                     </div>
                 </div>
 
@@ -240,14 +167,7 @@ export default function ContactPage() {
                         />
                     </div>
                 </section>
-                {/* Mission */}
-                <section className="text-center max-w-3xl mx-auto bg-gray-50 dark:bg-slate-900/60 p-12 rounded-lg border border-gray-100 dark:border-slate-800">
-                    <Shield className="w-12 h-12 text-amber-500 mx-auto mb-6" />
-                    <h2 className="text-3xl font-extrabold text-gray-900 dark:text-slate-100 mb-6">{t('ourMissionTitle')}</h2>
-                    <p className="text-xl text-gray-600 dark:text-slate-300 leading-relaxed italic">
-                        "{t('ourMissionDesc')}"
-                    </p>
-                </section>
+                
             </div>
         </div>
     );

@@ -2,6 +2,7 @@ import { ShieldCheck, MapPin, Building2, Road, Clock, PartyPopper } from 'lucide
 import SEO from '../components/SEO';
 import { useLanguage } from '../lib/LanguageContext';
 import { TARIFFS } from '../lib/pricing';
+import FAQSection from '../components/FAQSection';
 
 export default function ServicesPage() {
     const { t, lang } = useLanguage();
@@ -168,6 +169,9 @@ export default function ServicesPage() {
                         </table>
                     </div>
                 </div>
+            </section>
+            <section className="max-w-6xl mx-auto bg-gray-50 dark:bg-slate-900/60 p-12 rounded-lg border border-gray-100 dark:border-slate-800">
+                <FAQSection/>
             </section>
         </div>
     );

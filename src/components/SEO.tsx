@@ -10,29 +10,33 @@ export interface SEOProps {
   schema?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
-const DEFAULT_TITLE = 'Ен Такси Стара Загора (N6106) | Бързи и сигурни таксиметрови услуги 24/7';
+const DEFAULT_TITLE = 'Такси Стара Загора | Ен Такси 6106 – Денонощни услуги 24/7';
 const DEFAULT_DESCRIPTION = 'Поръчайте такси в Стара Загора бързо и лесно на 042 6106 или през мобилното ни приложение. Комфортни автомобили, изгодни тарифи и 24/7 обслужване.';
 const DEFAULT_KEYWORDS = 'такси Стара Загора, поръчка на такси 042 6106, Ен Такси 6106, таксиметрови услуги, градски превоз, трансфер летище София, трансфер Бургас, евтино такси Стара Загора, такси приложение';
 // Always read from env so staging builds and production never mix URLs
 const SITE_URL = (import.meta.env.VITE_DOMAIN as string | undefined)?.replace(/;$/, '') || 'https://6106.bg';
 // Use a raster image for og:image — SVG is not supported by Facebook / Twitter
 const DEFAULT_OG_IMAGE = `${SITE_URL}/Ntaxi.webp`;
-
+const DEFAULT_LOGO = `${SITE_URL}/assets/logo.svg`
 // Main TaxiService & LocalBusiness JSON-LD Schema
 export const mainTaxiSchema = {
   '@context': 'https://schema.org',
   '@graph': [
     {
       '@type': 'TaxiService',
-      '@id': `${SITE_URL}/services`,
-      'name': 'Ен Такси Стара Загора',
-      'alternateName': ['Taxi 6106', 'En Taxi Stara Zagora', 'Такси 6106'],
+      '@id': `${SITE_URL}/#taxiservice`,
+      'name': 'Ен Такси Стара Загора 6106',
+      'alternateName': ['Такси Стара Загора', 'Taxi 6106 Stara Zagora', 'Ен Такси 6106'],
       'url': SITE_URL,
       'telephone': '+359426106',
       'image': DEFAULT_OG_IMAGE,
-      'logo': DEFAULT_OG_IMAGE,
-      'priceRange': '$$',
+      'logo': DEFAULT_LOGO,
+      'priceRange': '€',
       'description': DEFAULT_DESCRIPTION,
+      // 2. Свързване с физическия бизнес чрез provider
+      'provider': {
+        '@id': `${SITE_URL}/#localbusiness`
+      },
       'address': {
         '@type': 'PostalAddress',
         'addressLocality': 'Стара Загора',
@@ -64,7 +68,7 @@ export const mainTaxiSchema = {
       },
       'hasOfferCatalog': {
         '@type': 'OfferCatalog',
-        'name': 'Такси Тарифи',
+        'name': 'Такси Тарифи Стара Загора',
         'itemListElement': [
           {
             '@type': 'Offer',
@@ -76,7 +80,7 @@ export const mainTaxiSchema = {
               '@type': 'UnitPriceSpecification',
               'price': '0.85',
               'priceCurrency': 'EUR',
-              'unitText': 'на километър'
+              'unitText': 'км'
             }
           },
           {
@@ -89,7 +93,7 @@ export const mainTaxiSchema = {
               '@type': 'UnitPriceSpecification',
               'price': '0.95',
               'priceCurrency': 'EUR',
-              'unitText': 'на километър'
+              'unitText': 'км'
             }
           }
         ]
@@ -97,16 +101,23 @@ export const mainTaxiSchema = {
     },
     {
       '@type': 'LocalBusiness',
-      '@id': `${SITE_URL}/contacts`,
-      'name': 'Ен Такси Стара Загора',
+      '@id': `${SITE_URL}/#localbusiness`,
+      'name': 'Ен Такси Стара Загора 6106',
       'url': SITE_URL,
       'telephone': '+359426106',
       'image': DEFAULT_OG_IMAGE,
-      'priceRange': '$$',
+      'priceRange': '€',
       'address': {
         '@type': 'PostalAddress',
         'addressLocality': 'Стара Загора',
+        'addressRegion': 'Стара Загора',
+        'postalCode': '6000',
         'addressCountry': 'BG'
+      },
+      'geo': {
+        '@type': 'GeoCoordinates',
+        'latitude': 42.4258,
+        'longitude': 25.6342
       }
     }
   ]

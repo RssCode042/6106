@@ -7,36 +7,35 @@ declare global {
   }
 }
 
-// Safely access env vars
-// const env = (import.meta as unknown as { env: Record<string, string | undefined> }).env || {};
-
-// Get Measurement ID or GTM ID from env vars
 export const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID || 'G-XXXXXXXXXX';
 export const GTM_CONTAINER_ID = import.meta.env.VITE_GTM_ID || '';
 
 /**
- * Initialize Google DataLayer, Consent Mode v2 defaults, and load gtag.js / GTM scripts.
+ * Initialize Google DataLayer, Consent Mode v2 defaults, and load scripts.
  */
 export function initAnalytics() {
   if (typeof window === 'undefined') return;
 
   window.dataLayer = window.dataLayer || [];
   
-  function gtag(...args: unknown[]) {
-    window.dataLayer.push(args);
+  // Корекция: Пускаме 'arguments', за да съответства на стандартния gtag интерфейс
+  function gtag(..._args: unknown[]) {
+    // eslint-disable-next-line prefer-rest-params
+    window.dataLayer.push(arguments);
   }
   
   window.gtag = gtag;
 
-  // Check saved consent state
+  // Проверка на записаното съгласие
   const savedConsent = localStorage.getItem('cookie-consent-accepted');
+  const isAccepted = savedConsent === 'all';
 
-  // Configure default consent mode v2 (privacy-first default)
+  // Consent Mode v2 defaults
   gtag('consent', 'default', {
-    analytics_storage: savedConsent === 'all' ? 'granted' : 'denied',
-    ad_storage: savedConsent === 'all' ? 'granted' : 'denied',
-    ad_user_data: savedConsent === 'all' ? 'granted' : 'denied',
-    ad_personalization: savedConsent === 'all' ? 'granted' : 'denied',
+    analytics_storage: isAccepted ? 'granted' : 'denied',
+    ad_storage: isAccepted ? 'granted' : 'denied',
+    ad_user_data: isAccepted ? 'granted' : 'denied',
+    ad_personalization: isAccepted ? 'granted' : 'denied',
     functionality_storage: 'granted',
     security_storage: 'granted',
     wait_for_update: 500
@@ -44,14 +43,13 @@ export function initAnalytics() {
 
   gtag('js', new Date());
 
-  // Initialize GA4 config
+  // Direct GA4 Integration
   if (GA_MEASUREMENT_ID && GA_MEASUREMENT_ID !== 'G-XXXXXXXXXX') {
     gtag('config', GA_MEASUREMENT_ID, {
-      send_page_view: false, // We handle page views manually via React Router
+      send_page_view: false, // Изключваме автоматичните изгледи (ползваме React Router)
       cookie_flags: 'SameSite=None;Secure'
     });
 
-    // Dynamically inject GA script if not already present
     if (!document.getElementById('ga-gtag-script')) {
       const script = document.createElement('script');
       script.id = 'ga-gtag-script';
@@ -61,7 +59,7 @@ export function initAnalytics() {
     }
   }
 
-  // Initialize Google Tag Manager if GTM ID is provided
+  // Google Tag Manager Integration
   if (GTM_CONTAINER_ID && !document.getElementById('gtm-script')) {
     window.dataLayer.push({
       'gtm.start': new Date().getTime(),
@@ -99,7 +97,7 @@ export function trackPageView(pagePath: string, pageTitle?: string) {
 }
 
 /**
- * Update Google Consent Mode status when user accepts/declines cookies in popup
+ * Update Google Consent Mode status
  */
 export function updateConsent(acceptedAll: boolean) {
   if (typeof window === 'undefined' || !window.gtag) return;
@@ -122,16 +120,14 @@ export function updateConsent(acceptedAll: boolean) {
 }
 
 /**
- * Track custom events (e.g., button clicks, taxi order clicks, phone calls)
+ * Track custom events
  */
 export function trackCustomEvent(eventName: string, params: Record<string, unknown> = {}) {
   if (typeof window === 'undefined') return;
 
   if (window.gtag) {
     window.gtag('event', eventName, params);
-  }
-
-  if (window.dataLayer) {
+  } else if (window.dataLayer) {
     window.dataLayer.push({
       event: eventName,
       ...params

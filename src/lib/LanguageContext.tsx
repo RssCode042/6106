@@ -15,11 +15,11 @@ export const translations = {
 
   // Hero
   heroBadge: { bg: '24/7 Такси в Стара Загора', en: '24/7 Taxi in Stara Zagora' },
-  heroTitle1: { bg: 'Свали и тръгни.', en: 'Download & Go.' },
-  heroTitle2: { bg: 'Само с няколко клика.', en: 'In just a few clicks.' },
-  heroDesc: { 
-    bg: 'Поръчайте такси на момента през мобилното приложение или на централа 042 6106. Сигурност, застраховка и прозрачни тарифи.',
-    en: 'Order a taxi instantly via our mobile app or dispatch central at 042 6106. Safety, insurance, and transparent fares.'
+  heroTitle1: { bg: 'Такси Стара Загора.', en: 'Taxi Stara Zagora.' },
+  heroTitle2: { bg: 'Бърз и сигурен превоз.', en: 'Fast and reliable transport.' },
+  heroDesc: {
+    bg: 'Търсите надеждно такси в Стара Загора? Ен Такси 6106 осигурява денонощни таксиметрови услуги, бърз трансфер до летища и удобна поръчка на такси през мобилно приложение или на телефон 042 6106',
+    en: 'Looking for a reliable taxi in Stara Zagora? En Taxi 6106 provides 24/7 taxi services, fast airport transfers, and convenient booking via a mobile app or by calling 042 6106.'
   },
   heroCallBtn: { bg: 'Обади се: 042 6106', en: 'Call: 042 6106' },
   heroAppBtn: { bg: 'Мобилно приложение', en: 'Mobile App' },
