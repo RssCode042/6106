@@ -3,9 +3,6 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 import Sitemap from 'vite-plugin-sitemap'
-import { VitePWA } from 'vite-plugin-pwa'
-
-// @ts-ignore
 
 export default defineConfig({
   base: '/',
@@ -16,38 +13,37 @@ export default defineConfig({
       png: { quality: 80 },
       jpeg: { quality: 80 },
       jpg: { quality: 80 },
-      webp: { quality: 80 , lossless: true},
+      webp: { quality:90},
       avif: { quality: 70 },
       svg: {
-    multipass: true,
-    plugins: [
-      {
-        name: 'preset-default',
-        params: {
-          overrides: {
-            cleanupNumericValues: false,
-            cleanupIds: {
-              minify: false,
-              remove: false,
+        multipass: true,
+        plugins: [
+          {
+            name: 'preset-default',
+            params: {
+              overrides: {
+                cleanupNumericValues: false,
+                cleanupIds: {
+                  minify: false,
+                  remove: false,
+                },
+                convertPathData: false,
+              },
             },
-            convertPathData: false,
           },
-        },
+          'sortAttrs',
+          {
+            name: 'addAttributesToSVGElement',
+            params: {
+              attributes: [{ xmlns: 'http://www.w3.org/2000/svg' }],
+            },
+          },
+        ],
       },
-      'sortAttrs',
-      {
-        name: 'addAttributesToSVGElement',
-        params: {
-          attributes: [{ xmlns: 'http://www.w3.org/2000/svg' }],
-        },
-      },
-    ],
-  },
     }),
     Sitemap({
       hostname: 'https://6106.bg',
       dynamicRoutes: [
-        '/',
         '/services',
         '/contact',
         '/download-app',
@@ -74,15 +70,12 @@ export default defineConfig({
         }
       }
     },
-    // Добавени оптимизации
     minify: 'esbuild',
-    sourcemap: process.env.NODE_ENV === 'development' ? true : false,
+    sourcemap: process.env.NODE_ENV === 'development',
     cssCodeSplit: true,
     chunkSizeWarningLimit: 500,
-    // Компресия не е поддържана в текущия тип Vite build options.
   },
   
-  // Добавени оптимизации за production
   optimizeDeps: {
     include: [
       'react',
@@ -95,7 +88,6 @@ export default defineConfig({
     ],
   },
   
-  // CSS оптимизации
   css: {
     modules: {
       localsConvention: 'camelCaseOnly',

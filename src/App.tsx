@@ -2,14 +2,13 @@ import { useState, Suspense, lazy } from "react";
 import { Building2, Plane, MapPin, Shield, Clock, Euro, Leaf, Sparkles, CreditCard, Smartphone, PhoneCall, CheckCircle2, ArrowRight, Phone, } from 'lucide-react';
 import SEO, { mainTaxiSchema } from "./components/SEO";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import AnalyticsTracker from "./components/AnalyticsTracker";
+// import AnalyticsTracker from "./components/AnalyticsTracker";
 import { LanguageProvider, useLanguage } from "./lib/LanguageContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import FAQSection from "./components/FAQSection";
 import { ThemeProvider } from "./lib/ThemeContext";
 import HeroImage from "./assets/HeroImage.webp";
-import AboutImage from "./assets/AboutUs.png";
+import AboutImage from "./assets/AboutUs.webp";
 import AppStore from "./components/AppStore";
 import ApplicationPage from "./pages/ApplicationPage";
 import CookieConsent from "./components/CookieConsent";
@@ -506,7 +505,6 @@ function Home() {
         <Pricing />
         <WhyChooseUs />
         <CallToAction />
-        <FAQSection />
       </Suspense>
     </main>
   );
@@ -521,7 +519,7 @@ function App() {
       <LanguageProvider>
         <BrowserRouter basename="/">
           <div className="page min-h-screen bg-gray-50 text-gray-950 dark:bg-gray-950 dark:text-gray-50 translate-all duration-300">
-            <AnalyticsTracker />
+            {/* <AnalyticsTracker /> */}
             <Header />
             <Suspense fallback={<PageLoader />}>
               <Routes>

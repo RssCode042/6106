@@ -4,6 +4,8 @@ import fs from 'fs';
 import path from 'path';
 
 const distPath = path.join(process.cwd(), 'dist');
+// Keep the unrendered app shell for fallback requests while generating routes.
+const appShell = fs.readFileSync(path.join(distPath, 'index.html'));
 
 const MIME_TYPES = {
   '.html': 'text/html',
@@ -19,7 +21,17 @@ const MIME_TYPES = {
 const server = http.createServer((req, res) => {
   // Strip query parameters
   const urlPath = req.url.split('?')[0];
-  let filePath = path.join(distPath, urlPath === '/' ? 'index.html' : urlPath);
+  const isAssetRequest = path.extname(urlPath) !== '';
+
+  if (!isAssetRequest) {
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end(appShell, 'utf-8');
+    return;
+  }
+
+  let filePath = isAssetRequest
+    ? path.join(distPath, urlPath)
+    : path.join(distPath, 'index.html');
   
   // If file doesn't exist, fallback to index.html (SPA behavior)
   if (!fs.existsSync(filePath)) {
@@ -37,10 +49,8 @@ const server = http.createServer((req, res) => {
   fs.readFile(filePath, (err, content) => {
     if (err) {
       // Final fallback to root index.html
-      fs.readFile(path.join(distPath, 'index.html'), (err, content) => {
-        res.writeHead(200, { 'Content-Type': 'text/html' });
-        res.end(content, 'utf-8');
-      });
+      res.writeHead(200, { 'Content-Type': 'text/html' });
+      res.end(appShell, 'utf-8');
     } else {
       res.writeHead(200, { 'Content-Type': contentType });
       res.end(content, 'utf-8');

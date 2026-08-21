@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Shield, CheckCircle2, Send, CheckCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock,  CheckCircle2, } from 'lucide-react';
 import SEO from '../components/SEO';
 import { useLanguage } from '../lib/LanguageContext';
-import FAQSection from "../components/FAQSection";
+
 
 
 
@@ -10,13 +9,7 @@ import FAQSection from "../components/FAQSection";
 export default function ContactPage() {
 
     const { t, lang } = useLanguage();
-    const [isSubmitted, setIsSubmitted] = useState(false);
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        setIsSubmitted(true);
-        setTimeout(() => setIsSubmitted(false), 5000);
-    };
+    
 
     const contactSchema = {
     '@context': 'https://schema.org',

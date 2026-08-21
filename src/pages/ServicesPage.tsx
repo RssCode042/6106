@@ -170,9 +170,8 @@ export default function ServicesPage() {
                     </div>
                 </div>
             </section>
-            <section className="max-w-6xl mx-auto bg-gray-50 dark:bg-slate-900/60 p-12 rounded-lg border border-gray-100 dark:border-slate-800">
-                <FAQSection/>
-            </section>
+            <FAQSection/>
+           
         </div>
     );
 }

@@ -307,7 +307,7 @@ export const translations = {
   footerNewBadge: { bg: 'Ново', en: 'New' },
   footerTerms: { bg: 'Общи условия', en: 'Terms & Conditions' },
   footerPrivacy: { bg: 'Политика за поверителност и бисквитки', en: 'Privacy & Cookie Policy' },
-  footerRights: { bg: '© 2026 „Ен Такси Стара Загора“ ЕООД. ЕИК: ' + import.meta.env.VITE_COMPANY_UIC + ' Всички права запазени.', en: '© 2026 "En Taxi Stara Zagora" Ltd. UIC: ' + import.meta.env.VITE_COMPANY_UIC + ' All rights reserved.' },
+  footerRights: { bg: '© 2026 ' + import.meta.env.VITE_COMPANY_NAME + '  |  ЕИК: ' + import.meta.env.VITE_COMPANY_UIC + ' Всички права запазени.', en: '© 2026 "En Taxi Stara Zagora" Ltd. UIC: ' + import.meta.env.VITE_COMPANY_UIC + ' All rights reserved.' },
 
   // Cookie Consent & Call Widget
   cookieText: { 
